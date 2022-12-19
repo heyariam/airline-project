@@ -5,14 +5,10 @@
       flat
       class="px-12"
     >
-    <v-btn>
-    <v-icon
-        color="green"
-        left 
-        class="mr-2"
-      > fa-light fa-plane </v-icon>
+    <div>
+      <v-icon left class="mr-2"> {fa-regular fa-plane} </v-icon>
       <span>Tekton</span> Airlines 
-    </v-btn>
+    </div>
 
       <v-tabs
         centered

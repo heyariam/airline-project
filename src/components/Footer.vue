@@ -1,10 +1,16 @@
 <template>
-  <v-footer>
+  <v-footer color="#FCF3CF">
     <v-col
       class="text-center"
       cols="12"
+      flat
     >
-      <span>2022</span>> — <strong>Tekton Airlines</strong>
+     {{ new Date().getFullYear() }} —<strong>Tekton Airlines</strong>
     </v-col>
   </v-footer>
 </template>
+
+<script>
+export default {
+}
+</script>
