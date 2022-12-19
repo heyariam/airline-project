@@ -1,5 +1,4 @@
 <template>
-  <v-app id="inspire">
     <v-app-bar
       app
       color="#FCF3CF"
@@ -24,14 +23,6 @@
       </v-tabs>
     </v-app-bar>
 
-    <v-main>
-      <v-container>
-
-  
-      </v-container>
-    </v-main>
-  
-  </v-app>
 </template>
 
 <script>
