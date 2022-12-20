@@ -1,16 +1,11 @@
 <template>
   <div>
-    <FormComp @submit="onSubmit">
-      <div>
-        <label for="email">Email:</label>
-        <input id="email" type="email" v-model="email" />
-      </div>
-    </FormComp>
+    <FormComp @submit="onSubmit" />
   </div>
 </template>
 
 <script>
-import FormComp from './FormComp.vue'
+import FormComp from '../components/FormComp.vue'
 
 export default {
   name: 'Registration',
