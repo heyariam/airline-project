@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
       app
-      color="#FCF3CF"
+      color= "#f5c66f"
       flat
       class="px-12"
     >
@@ -32,7 +32,6 @@
       links: [
         'Inicio',
         'Busca tu vuelo',
-        'Blog',
         'Contáctanos',
       ],
     }),
