@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form class="searchbox">
     <v-text-field v-model="desde" label="Desde" />
     <v-text-field v-model="hacia" label="Hacia" />
     <v-text-field v-model="salida" label="Fecha salida" />
@@ -40,3 +40,16 @@ export default {
   }
 }
 </script>
+
+
+<style>
+.searchbox{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content:space-around;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 1rem;
+}
+</style>

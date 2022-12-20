@@ -17,25 +17,8 @@
                     <v-card-text>
                       <v-row>
                         <v-col cols="10" class="card-glass">
-                             <v-text-field label="Salida" class="" filled
-                                        prepend-inner-icon="fa-plane-departure" solo flat
-                                        background-color="" rounded success>
-                              </v-text-field>
-                              <v-text-field label="Llegada" class="" filled
-                                        prepend-inner-icon="mdi-magnify" solo flat
-                                        background-color="" rounded success>
-                              </v-text-field>
-                              <v-text-field label="Search your daily groceries" class="" filled
-                                        prepend-inner-icon="mdi-magnify" solo flat
-                                        background-color="" rounded outlined success>
-                              </v-text-field>
-                              <v-text-field label="Search your daily groceries" class="" filled
-                                        prepend-inner-icon="mdi-magnify" solo flat
-                                        background-color="" rounded outlined success>
-                              </v-text-field>
-                                <v-btn color="yellow" rounded outlined success dark x-large class="py-2 d-none d-sm-none d-md-flex">
-                                  search
-                                </v-btn> 
+                          <SearchInput/>
+
                         </v-col>
                       </v-row>
                     </v-card-text>
@@ -53,9 +36,12 @@
 
 <script>
 import "@fortawesome/vue-fontawesome";
+import SearchInput from "../components/SearchInput.vue";
 
 export default{
-  
+  components: {
+    SearchInput
+  }
 }
 </script>
 
@@ -70,14 +56,6 @@ export default{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.2px);
     -webkit-backdrop-filter: blur(5.2px);
-  }
-
-  .card-glass{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    gap: 2rem;
   }
 
  
