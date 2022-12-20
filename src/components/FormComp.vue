@@ -75,7 +75,7 @@ label {
 
 input,
 select {
-  width: 100%;
+  width: 65%;
   padding: 0.5em;
   border: 1px solid #ccc;
   border-radius: 4px;
