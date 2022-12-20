@@ -1,13 +1,42 @@
 <template>
   <v-card>
     <FormComp/>
-    <button type="submit">Add Passenger</button>
-    <ul>
-      <li>
-        <button @click="editPerson(person)">Edit</button>
-        <button @click="deletePerson(person)">Delete</button>
-      </li>
-    </ul>
+   
+    <v-btn
+      class="mx-2"
+      fab
+      dark
+      color="indigo"
+      @click="addPerson(person)"
+    >
+      <v-icon dark>
+        mdi-plus
+      </v-icon>
+    </v-btn>
+    <v-btn
+      class="mx-2"
+      fab
+      dark
+      color="indigo"
+      @click="editPerson(person)"
+    >
+      <v-icon dark>
+        mdi-pencil
+      </v-icon>
+    </v-btn>
+
+    <v-btn
+      class="mx-2"
+      fab
+      dark
+      color="indigo"
+      @click="deletePerson(person)"
+    >
+      <v-icon dark>
+        mdi-delete
+      </v-icon>
+    </v-btn>
+
   </v-card>  
 </template>
 
@@ -15,7 +44,7 @@
 import FormComp from "../components/FormComp.vue"
 
 export default {
-  name: 'Registration',
+  name: 'AddPass',
   components: {
     FormComp
   },
@@ -47,6 +76,12 @@ export default {
   }
 }
 </script>
+
+<style>
+ li{
+  list-style: none,
+ }
+</style>
 
 
   

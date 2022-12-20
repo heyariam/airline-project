@@ -26,7 +26,7 @@ export default defineComponent({
   },
   components: {
     NavBar,
-    AddPass
+    AddPass, 
     //Herowrapper,
     Footer
 },

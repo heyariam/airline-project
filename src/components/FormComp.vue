@@ -27,7 +27,14 @@
       <input id="docNumber" type="text" v-model="docNumber" />
     </div>
    
-    <button type="submit">Submit</button>
+    <v-btn
+      class="button"
+      type="submit"
+      rounded
+      small
+      color="primary"
+      dark>
+      Añadir</v-btn>
   </form>
 </template>
 
@@ -74,8 +81,9 @@ label {
 }
 
 input,
-select {
-  width: 65%;
+select,
+.button {
+  width: 40%;
   padding: 0.5em;
   border: 1px solid #ccc;
   border-radius: 4px;
