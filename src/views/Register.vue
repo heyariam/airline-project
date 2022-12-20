@@ -1,4 +1,8 @@
-<template>
+<!--Reusable form component-->
+
+
+<!-- old form -->
+<!--<template>
   <form>
     <v-text-field
       v-model="name"
@@ -34,7 +38,7 @@
     <v-btn class="mr-4" @click="submit"> Enviar </v-btn>
     <v-btn @click="clear"> Borrar </v-btn>
   </form>
-</template>
+</template>-->
 
 <script>
 export default {
