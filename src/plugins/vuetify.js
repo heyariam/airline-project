@@ -1,4 +1,4 @@
-import "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/vue-fontawesome";
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
 
