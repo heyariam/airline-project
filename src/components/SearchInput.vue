@@ -1,29 +1,29 @@
 <template>
   <v-form>
-    <v-text-field v-model="field1" label="Desde" />
-    <v-text-field v-model="field2" label="Hacia" />
-    <v-text-field v-model="field3" label="Salida" />
-    <v-text-field v-model="field4" label="Retorno" />
-    <v-btn @click="search">Buscar</v-btn>
+    <v-text-field v-model="desde" label="Desde" />
+    <v-text-field v-model="hacia" label="Hacia" />
+    <v-text-field v-model="salida" label="Fecha salida" />
+    <v-text-field v-model="retorno" label="Fecha retorno" />
+    <v-btn @click="search">Buscar vuelos</v-btn>
   </v-form>
 </template>
 
 <script>
 export default {
   props: {
-    field1: {
+    desde: {
       type: String,
       default: ''
     },
-    field2: {
+    hacia: {
       type: String,
       default: ''
     },
-    field3: {
+    salida: {
       type: Date,
       default: ''
     },
-    field4: {
+    retorno: {
       type: Date,
       default: ''
     }
@@ -31,10 +31,10 @@ export default {
   methods: {
     search() {
       this.$emit('search', {
-        field1: this.field1,
-        field2: this.field2,
-        field3: this.field3,
-        field4: this.field4
+        desde: this.desde,
+        hacia: this.hacia,
+        salida: this.salida,
+        retorno: this.retorno
       })
     }
   }

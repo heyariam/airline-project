@@ -6,7 +6,7 @@
       class="px-12"
     >
     <div>
-      <v-icon left class="mr-2"> {fa-regular fa-plane} </v-icon>
+      <v-icon left class="mr-2"> fa-regular fa-plane </v-icon>
       <span>Tekton</span> Airlines 
     </div>
 
