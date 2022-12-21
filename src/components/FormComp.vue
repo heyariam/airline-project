@@ -1,100 +1,157 @@
 <!--Reusable form component-->
 <template>
-  <form @submit.prevent="onSubmit">
-    <div>
-      <label for="name">Name:</label>
-      <input id="name" type="text" v-model="name" />
-    </div>
-    <div>
-      <label for="lastName">Last Name:</label>
-      <input id="lastName" type="text" v-model="lastName" />
-    </div>
-    <div>
-      <label for="nationality">Nationality:</label>
-      <input id="nationality" type="text" v-model="nationality" />
-    </div>
-    <div>
-      <label for="docType">Document Type:</label>
-      <select id="docType" v-model="docType">
-        <option v-for="option in options" v-bind:key="option.value">
-          {{ option.label }}
-        </option>
-      </select>
-    </div>
-    <div>
-      <label for="docNumber">Document Number:</label>
-      <input id="docNumber" type="text" v-model="docNumber" />
-    </div>
-   
-    <v-btn
-      class="button"
-      type="submit"
-      rounded
-      small
-      color="primary"
-      dark>
-      Borrar</v-btn>
-      <v-btn
-      class="button"
-      type="submit"
-      rounded
-      small
-      color="primary"
-      dark>Siguiente
-      </v-btn>
-  </form>
+    <v-row justify="center">
+      <v-col
+        cols="12"
+        sm="10"
+        md="8"
+        lg="6"
+      >
+        <v-card ref="form">
+          <v-card-text>
+            <v-text-field
+              ref="name"
+              v-model="name"
+              :rules="[() => !!name || 'This field is required']"
+              :error-messages="errorMessages"
+              label="Nombre"
+              required
+            ></v-text-field>
+            <v-text-field
+              ref="lastname"
+              v-model="lastname"
+              :rules="[() => !!lastname || 'This field is required']"
+              label="Apellido"
+              required
+            ></v-text-field>
+           
+            <v-text-field
+              ref="nationality"
+              v-model="nationality"
+              :rules="[() => !!nationality || 'This field is required', addressCheck]"
+              label="Nacionalidad"
+              required
+            ></v-text-field>
+             <v-autocomplete
+              ref="doctype"
+              v-model="doctype"
+              :rules="[() => !!doctype || 'This field is required']"
+              :items="doctypes"
+              label="Tipo de documento"
+              placeholder="Seleccionar..."
+              required
+            ></v-autocomplete>
+             <v-text-field
+              ref="docnumber"
+              v-model="docnumber"
+              :rules="[
+                () => !!docnumber || 'This field is required',
+                () => !!docnumber && docnumber.length <= 9 || 'Address must be less than 9 characters',
+                docnumberCheck
+              ]"
+              label="Numero de documento"
+              counter="9"
+              required
+            ></v-text-field>
+            
+           
+          </v-card-text>
+          <v-divider class="mt-12"></v-divider>
+          <v-card-actions>
+            <v-btn text>
+              Cancel
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-slide-x-reverse-transition>
+              <v-tooltip
+                v-if="formHasErrors"
+                left
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    icon
+                    class="my-0"
+                    v-bind="attrs"
+                    @click="resetForm"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-refresh</v-icon>
+                  </v-btn>
+                </template>
+                <span>Refresh form</span>
+              </v-tooltip>
+            </v-slide-x-reverse-transition>
+            <v-btn
+              color="primary"
+              text
+              @click="submit"
+            >
+              Submit
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
 </template>
 
+
 <script>
-export default {
-  name: 'FormComp',
-  data() {
-    return {
-      name: '',
-      lastName: '',
-      nationality: '',
-      docType: '',
-      options: [
-        { value: 'dni', label: 'DNI' },
-        { value: 'ce', label: 'C.E' },
-        { value: 'pasaporte', label: 'Pasaporte' }
-      ],
-      docNumber: '',
-    }
-  },
-  methods: {
-    onSubmit() {
-      this.$emit('submit', {
+  export default {
+    data: () => ({
+    doctypes: ['DNI', 'C.E', 'Pasaporte'],
+    errorMessages: '',
+    name: null,
+    lastname: null,
+    nationality: null,
+    doctype: null,
+    docnumber: null,
+    formHasErrors: false,
+  }),
+
+  computed: {
+    form () {
+      return {
         name: this.name,
-        lastName: this.lastName,
+        lastname: this.lastname,
         nationality: this.nationality,
-        docType: this.docType,
-        docNumber: this.docNumber
+        doctype: this.doctype,
+        docnumber: this.docnumber,
+      }
+    },
+  },
+
+  watch: {
+    name () {
+      this.errorMessages = ''
+    },
+  },
+
+  methods: {
+    docnumberCheck () {
+      this.errorMessages = this.docnumber && !this.name
+        ? `Hey! I'm required`
+        : ''
+
+      return true
+    },
+    resetForm () {
+      this.errorMessages = []
+      this.formHasErrors = false
+
+      Object.keys(this.form).forEach(f => {
+        this.$refs[f].reset()
       })
-    }
-  }
+    },
+    submit () {
+      this.formHasErrors = false
+
+      Object.keys(this.form).forEach(f => {
+        if (!this.form[f]) this.formHasErrors = true
+
+        this.$refs[f].validate(true)
+      })
+    },
+  },
 }
+
 </script>
-
-<style>
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-input,
-select,
-.button {
-  width: 40%;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-</style>
-
