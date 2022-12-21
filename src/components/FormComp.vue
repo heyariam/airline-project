@@ -1,7 +1,6 @@
 <!--Reusable form component-->
 <template>
   <form @submit.prevent="onSubmit">
-    <slot></slot>
     <div>
       <label for="name">Name:</label>
       <input id="name" type="text" v-model="name" />
@@ -34,7 +33,15 @@
       small
       color="primary"
       dark>
-      Añadir</v-btn>
+      Borrar</v-btn>
+      <v-btn
+      class="button"
+      type="submit"
+      rounded
+      small
+      color="primary"
+      dark>Siguiente
+      </v-btn>
   </form>
 </template>
 
