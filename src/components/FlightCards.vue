@@ -1,7 +1,7 @@
 <template>
  <v-container>
       <v-row justify="space-around">
-        <v-card >  
+        <v-card>  
           <v-card-text justify-content= "row">
             <div class="block">
               <p>{{item.name}}</p>
