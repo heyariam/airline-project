@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <style>
-@import '../style/Global.css';
+
  *{
   margin: 0px;
   padding: 0px;
