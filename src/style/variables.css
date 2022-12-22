@@ -1,35 +1,7 @@
 :root{
       --travel-color-main-background: #f1f3f4;
-      --travel-color-token-divider-default: #dadce0;
-      --travel-color-token-divider-secondary: #dadce0;
       --travel-color-footer: #f5c66f;
       --travel-color-header: #f5c66f;
-      --travel-color-token-image-overlay: rgba(0,0,0,0.03);
-      --travel-color-token-loading: #e8eaed;
-      --travel-color-token-on-primary: #fff;
-      --travel-color-token-on-scrim: #fff;
-      --travel-color-token-on-secondary: #1967d2;
-      --travel-color-token-on-secondary-state-content: #174ea6;
-      --travel-color-token-on-secondary-state-layer: var( --travel-color-token-on-secondary );
-      --travel-color-token-on-surface-de-emphasis: #70757a;
-      --travel-color-token-on-surface-default: #3c4043;
-      --travel-color-token-on-surface-disabled: rgba(60,64,67,0.38);
-      --travel-color-token-on-surface-emphasis: #202124;
-      --travel-color-token-on-surface-emphasis-variant: #202124;
-      --travel-color-token-on-surface-icon-navigation: #3c4043;
-      --travel-color-token-on-surface-icon-secondary: #5f6368;
-      --travel-color-token-on-surface-inverted: #fff;
-      --travel-color-token-on-surface-link-default: #1558d6;
-      --travel-color-token-on-surface-link-visited: #681da8;
-      --travel-color-token-on-surface-negative: #d93025;
-      --travel-color-token-on-surface-neutral: #e37400;
-      --travel-color-token-on-surface-positive: #188038;
-      --travel-color-token-primary: #1a73e8;
-      --travel-color-primary-state-content: #174ea6;
-      --travel-color-primary-state-layer: var(--travel-color-token-primary);
-      --travel-color-primary-variant: #4285f4;
-      --travel-color-scrim: rgba(32,33,36,0.6);
-      --travel-color-tertiary: #f1f3f4;
       --travel-color-black: #202124;
       --travel-color-blue-100: #d2e3fc;
       --travel-color-blue-50: #e8f0fe;
@@ -52,9 +24,12 @@
       --travel-color-grey-900: #202124;
       --travel-color-red-100: #fad2cf;
       --travel-color-red-50: #fce8e6;
+      --travel-color-salmon-50: #FA8072;
+      --travel-color-salmon-100: #E9967A;
       --travel-color-red-600: #d93025;
       --travel-color-red-700: #c5221f;
       --travel-color-red-900: #a50e0e;
       --travel-color-white: #fff;
+      --travel-color-glassmorph:rgba(255, 255, 255, 0.19);
   
 }  
