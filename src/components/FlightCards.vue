@@ -1,28 +1,23 @@
 <template>
  <v-container>
       <v-row justify="space-around">
-        <v-card width="500" height="300">  
+        <v-card >  
           <v-card-text justify-content= "row">
-            <div class="font-weight-bold ml-8 mb-2">
-              <p>{hora salida}</p>
-                 <p>{ciudad}</p>
-            </div>
-             <div class="font-weight-bold ml-8 mb-2">
-                 <p>{duracion}</p>
-               <p>{img}</p>
-            </div>
-             <div class="font-weight-bold ml-8 mb-2">
-              <p>{hora llegada}</p>
-               <p>{ciudad}</p>
-            </div>
-             <div class="font-weight-bold ml-8 mb-2">
-               <div>
+            <div class="block">
+              <p>{{item.name}}</p>
+              <p>{{item.name}}</p>
+              </div>
+              <div class="block">
+                <p>{{item.name}}</p>
+              <p>{{item.name}}</p>
+              </div>
+              <div class="block">
+                div>
                  <p>{precio}</p>
                </div>
                <div>
                  <btn class="submit">comprar</btn>
                </div>
-            </div>
           </v-card-text>
         </v-card>
       </v-row>
@@ -31,7 +26,22 @@
 
 
 <script>
-export default {
-
+  export default {
+    props: ['item']
   }
 </script>
+
+<style>
+.card {
+  /* Style the card container */
+  width: 500px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.block {
+  /* Style the blocks */
+  margin-bottom: 20px;
+}
