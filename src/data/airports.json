@@ -1,0 +1,148 @@
+[ 
+  {   "Id": "1",
+      "nameCity": "Buenos Aires",
+      "nameCountry":"Argentina",
+      "nameAirport":"Ministro Pistarini International Airport",
+      "iataCode": "EZE"
+      },
+      {
+      "Id": "2",
+      "nameCity": "Brasilia",
+      "nameCountry":"Brazil",
+      "nameAirport":"Presidente Juscelino Kubistschek International Airport",
+      "iataCode": "BSB"
+      },
+      {
+      "Id": "3",
+      "nameCity":"Minas Gerais",
+      "nameCountry":"Brazil",
+      "nameAirport": "Tancredo Neves International Airport",
+      "iataCode": "CNF"
+      },
+      {
+      "Id": "4",
+      "nameCity": "Santa Catarina",
+      "nameCountry": "Brazil",
+      "nameAirport": "Hercílio Luz International Airport",
+      "iataCode": "FLN"
+      },
+      {
+        "Id": "5",
+        "nameCity": "Rio de Janeiro",
+        "nameCountry": "Brazil",
+        "nameAirport": "Galeão - Antônio Carlos Jobim International Airport",
+        "iataCode": "GIGL"
+      },
+      {
+        "Id": "6",
+        "nameCity": "Sao Paulo",
+        "nameCountry": "Brazil",
+        "nameAirport": "Guarulhos - Governador André Franco Montoro International Airport",
+        "iataCode": "GRU"
+      },
+      {
+        "Id": "7",
+        "nameCity": "Sao Paulo",
+        "nameCountry": "Brazil",
+        "nameAirport": "Congonhas Airport",
+        "iataCode": "CGH"
+      },
+      {
+        "Id": "8",
+        "nameCity": "Santiago",
+        "nameCountry": "Chile",
+        "nameAirport": "Comodoro Arturo Merino Benítez International Airport",
+        "iataCode": "SCL"
+      },
+    {
+        "Id": "9",
+        "nameCity": "Bogotá",
+        "nameCountry": "Colombia",
+        "nameAirport": "El Dorado International Airport",
+        "iataCode": "BOG"
+      },
+      {
+        "Id": "10",
+        "nameCity": "Lima",
+        "nameCountry": "Peru",
+        "nameAirport": "Jorge Chávez International Airport",
+        "iataCode": "LIM"
+      },
+      {
+        "Id": 11,
+        "nameCity": "Pucallpa",
+        "nameCountry": "Peru",
+        "nameAirport": "Cap FAP David Abenzur Rengifo International Airport",
+        "iataCode": "PCL"
+      },
+      {
+        "Id": "12",
+        "nameCity": "Chiclayo",
+        "nameCountry": "Peru",
+        "nameAirport": "Capitan FAP Jose A Quinones Gonzales International Airport",
+        "iataCode": "CIX"
+      },
+      {
+        "Id": "13",
+        "nameCity": "Juliaca",
+        "nameCountry": "Peru",
+        "nameAirport": "Inca Manco Capac International Airport",
+        "iataCode": "JUL"
+      },
+      {
+        "Id": "14",
+        "nameCity": "Iquitos",
+        "nameCountry": "Peru",
+        "nameAirport": "Coronel FAP Francisco Secada Vignetta International Airport",
+        "iataCode": "IQT"
+      },
+      {
+        "Id": "15",
+        "nameCity": "Arequipa",
+        "nameCountry": "Peru",
+        "nameAirport": "Rodríguez Ballón International Airport",
+        "iataCode": "AQP"
+      },
+      {
+        "Id": "16",
+        "nameCity": "Trujillo",
+        "nameCountry": "Peru",
+        "nameAirport": "Capitan FAP Carlos Martinez De Pinillos International Airport",
+        "iataCode": "TRU"
+      },
+      {
+        "Id": "17",
+        "nameCity": "Tarapoto",
+        "nameCountry": "Peru",
+        "nameAirport": "Cadete FAP Guillermo Del Castillo Paredes Airport",
+        "iataCode": "TPP"
+      },
+      {
+        "Id": "18",
+        "nameCity": "Tacna",
+        "nameCountry": "Peru",
+        "nameAirport": "Coronel FAP Carlos Ciriani Santa Rosa International Airport ",
+        "iataCode": "TCQ"
+      },
+      {
+        "Id": "19",
+        "nameCity": "Puerto Maldonado",
+        "nameCountry": "Peru",
+        "nameAirport": "Padre Aldamiz International Airport",
+        "iataCode": "PEM"
+      },
+      {
+        "Id": "20",
+        "nameCity": "Piura",
+        "nameCountry": "Peru",
+        "nameAirport": "Capitán FAP Guillermo Concha Iberico International Airport",
+        "iataCode": "PIU"
+      },
+      {
+        "Id": "21",
+        "nameCity": "Cusco",
+        "nameCountry": "Peru",
+        "nameAirport": "Alejandro Velasco Astete International Airport",
+        "iataCode": "CUZ"
+      }
+]
