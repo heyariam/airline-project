@@ -1,12 +1,12 @@
 {
   "passengers": [
     {
-      "id": 
-      "name": 
-      "lastname": 
-      "nationality": 
-      "documenttype":
-      "documentnumber": 
+      "id": ,
+      "name": ,
+      "lastname": , 
+      "nationality": ,
+      "documenttype":,
+      "documentnumber": ,
     }
   ]
 }
