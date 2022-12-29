@@ -7,12 +7,12 @@
         md="8"
         lg="6"
       >
-        <v-card ref="form">
+        <v-card ref="form" class ="my-card">
           <v-card-text>
             <v-text-field
               ref="name"
               v-model="name"
-              :rules="[() => !!name || 'This field is required']"
+              :rules="[() => !!name || 'Campo requerido']"
               :error-messages="errorMessages"
               label="Nombre"
               required
@@ -20,7 +20,7 @@
             <v-text-field
               ref="lastname"
               v-model="lastname"
-              :rules="[() => !!lastname || 'This field is required']"
+              :rules="[() => !!lastname || 'Campo requerido']"
               label="Apellido"
               required
             ></v-text-field>
@@ -28,14 +28,14 @@
             <v-text-field
               ref="nationality"
               v-model="nationality"
-              :rules="[() => !!nationality || 'This field is required', addressCheck]"
+              :rules="[() => !!nationality || 'Campo requerido', nationalityCheck]"
               label="Nacionalidad"
               required
             ></v-text-field>
              <v-autocomplete
               ref="doctype"
               v-model="doctype"
-              :rules="[() => !!doctype || 'This field is required']"
+              :rules="[() => !!doctype || 'Campo requerido']"
               :items="doctypes"
               label="Tipo de documento"
               placeholder="Seleccionar..."
@@ -45,8 +45,8 @@
               ref="docnumber"
               v-model="docnumber"
               :rules="[
-                () => !!docnumber || 'This field is required',
-                () => !!docnumber && docnumber.length <= 9 || 'Address must be less than 9 characters',
+                () => !!docnumber || 'Campo requerido',
+                () => !!docnumber && docnumber.length <= 9 || 'El documento debe tener máximo 9 carácteres',
                 docnumberCheck
               ]"
               label="Numero de documento"
