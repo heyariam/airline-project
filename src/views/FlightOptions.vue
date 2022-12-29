@@ -2,23 +2,8 @@
  <v-container>
       <v-row justify="space-around">
         <Card>  
-          <v-card-text justify-content= "row">
-            <div class="block">
-              <p>{{item.name}}</p>
-              <p>{{item.name}}</p>
-              </div>
-              <div class="block">
-                <p>{{item.name}}</p>
-              <p>{{item.name}}</p>
-              </div>
-              <div class="block">
-                <div>
-                 <p>{precio}</p></div>
-               </div>
-               <div>
-                 <btn class="submit">comprar</btn>
-               </div>
-          </v-card-text>
+          <h1>AQUI SALE TU VUELO</h1>
+          <router-link :to="{path: '/inicio' }"> volver </router-link>
         </Card>
       </v-row>
     </v-container>

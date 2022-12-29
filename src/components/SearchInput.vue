@@ -4,11 +4,68 @@
         <v-card-title class="card-title">Aquí comienza tu aventura</v-card-title>
         <v-card-text>
           <v-form class="searchbox">
-            <v-text-field v-model="desde" label="Desde" />
-            <v-text-field v-model="hacia" label="Hacia" />
-            <v-text-field v-model="salida" label="Fecha salida" />
-            <v-text-field v-model="retorno" label="Fecha retorno" />
-            <v-btn
+            <v-select :items="items" label="Desde">{{items}}</v-select>
+            <v-select :items="items" label="Hacia"></v-select>
+       
+                  <v-menu
+                    v-model="fromDateMenu"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    lazy
+                    transition="scale-transition"
+                    offset-y
+                    full-width
+                    max-width="290px"
+                    min-width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        label="Fecha salida"
+                        readonly
+                        :value="fromDateDisp"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      locale="en-in"
+                      :min="minDate"
+                      :max="maxDate"
+                      v-model="fromDateVal"
+                      no-title
+                      @input="fromDateMenu = false"
+                    ></v-date-picker>
+                  </v-menu>
+                  <v-menu
+                    v-model="toDateMenu"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    lazy
+                    transition="scale-transition"
+                    offset-y
+                    full-width
+                    max-width="290px"
+                    min-width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        label="Fecha retorno"
+                        readonly
+                        :value="toDateDisp"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      locale="en-in"
+                      :min="minDate"
+                      :max="maxDate"
+                      v-model="toDateVal"
+                      no-title
+                      @input="toDateMenu = false"
+                    ></v-date-picker>
+                  </v-menu>
+
+     
+          <v-btn
             @click="navigateToPage"
             rounded
             color="error">
@@ -20,40 +77,36 @@
 </template>
 
 <script>
-import { routerLink } from 'vue-router'
 
-
-export default {
-  components: {
-    routerLink
+export default { 
+    data: () => (
+      {
+      items: ["Lima", "Arequipa", "Cajamarca", "Cusco", "Trujillo", "Piura", "Tacna", "Tarapoto", "Juliaca"]
+      },
+      {
+        fromDateMenu: false,
+        fromDateVal: null,
+        minDate: "2020-01-05",
+        maxDate: "2019-08-30"
+      },
+      {
+        toDateMenu: false,
+        toDateVal: null,
+        minDate: "2020-01-05",
+        maxDate: "2019-08-30"
+      }
+   ),
+  computed: {
+    fromDateDisp() {
+      return this.fromDateVal;
+    },
   },
-  props: {
-    desde: {
-      type: String,
-      default: ''
-    },
-    hacia: {
-      type: String,
-      default: ''
-    },
-    salida: {
-      type: Date,
-      default: ''
-    },
-    retorno: {
-      type: Date,
-      default: ''
-    }
-  },
-  methods: {
     methods: {
     navigateToPage() {
-      // Navigate to the specified path
-      this.$router.push()
+      this.$router.push({ path: '/vuelos'})
     }
   }
   }
-}
 </script>
 
 
