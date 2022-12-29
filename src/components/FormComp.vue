@@ -100,6 +100,7 @@
     data: () => ({
     doctypes: ['DNI', 'C.E', 'Pasaporte'],
     errorMessages: '',
+    id: Date.now(),
     name: null,
     lastname: null,
     nationality: null,
