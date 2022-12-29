@@ -1,5 +1,15 @@
 <template>
   <div>
+
+    <v-button> 
+      <v-icon dark>mdi-plus</v-icon>
+    </v-button>
+    <v-button>
+      <v-icon dark>mdi-plus</v-icon>
+    </v-button>
+    <v-button>
+      <v-icon dark>mdi-delete</v-icon>
+    </v-button>
     <!--<v-btn
       class="mx-2"
       fab
