@@ -8,8 +8,8 @@
             <v-text-field v-model="hacia" label="Hacia" />
             <v-text-field v-model="salida" label="Fecha salida" />
             <v-text-field v-model="retorno" label="Fecha retorno" />
-            <v-btn 
-            @click="search"
+            <v-btn
+            @click="navigateToPage"
             rounded
             color="error">
             Buscar vuelos</v-btn>
@@ -20,7 +20,13 @@
 </template>
 
 <script>
+import { routerLink } from 'vue-router'
+
+
 export default {
+  components: {
+    routerLink
+  },
   props: {
     desde: {
       type: String,
@@ -40,14 +46,12 @@ export default {
     }
   },
   methods: {
-    search() {
-      this.$emit('search', {
-        desde: this.desde,
-        hacia: this.hacia,
-        salida: this.salida,
-        retorno: this.retorno
-      })
+    methods: {
+    navigateToPage() {
+      // Navigate to the specified path
+      this.$router.push()
     }
+  }
   }
 }
 </script>

@@ -6,7 +6,7 @@
       class="px-12"
     >
     <div>
-      <v-icon left class="mr-2"> fa-regular fa-plane </v-icon>
+      <v-icon left class="mr-2"> fa-plane </v-icon>
       <span>Tekton</span> Airlines 
     </div>
 
@@ -15,9 +15,10 @@
         class="ml-n9"
         color="grey darken-1"
       >
-        <v-tab
-          v-for="link in links"
+
+        <v-tab v-for="link in links"
           :key="link"
+          
         >
           {{ link }}
         </v-tab>
