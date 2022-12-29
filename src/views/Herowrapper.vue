@@ -1,5 +1,4 @@
 <template>
-  <v-container fluid class="main-cont">
     <div class="main-hero" max-height="100%" max-width="100%">
       <div class="container-wrap">
         <v-row>
@@ -13,8 +12,6 @@
         </v-row>
       </div>
     </div>
-  </v-container>
-  
 </template>
 
 <script>
@@ -29,7 +26,13 @@ export default{
 </script>
 
 <style>
+ *{
+  margin: 0px;
+  padding: 0px;
+ }
   .main-hero{
     background-color: #f5c66f;
   }
+
+
 </style>

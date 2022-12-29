@@ -1,26 +1,22 @@
 <template>
   <div>
+    <NavBar />
     <FormComp @submit="onSubmit" />
+    <Footer/>
   </div>
 </template>
 
 <script>
+import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
 import FormComp from '../components/FormComp.vue'
 
 export default {
   name: 'Registration',
   components: {
-    FormComp
-  },
-  data() {
-    return {
-      email: ''
-    }
-  },
-  methods: {
-    onSubmit(formData) {
-      console.log(formData)
-    }
+    NavBar,
+    FormComp,
+    Footer
   }
 }
 </script>

@@ -1,9 +1,20 @@
 
 <template>
-  <button class="Button">
-    <slot> </slot>
+  <button @click="onClick" class="Button">
+    <slot>Button </slot>
   </button>
-  </template>
+</template>
+
+<script>
+export default {
+  props: {
+    onClick: {
+      type: Function,
+      required: true
+    }
+  }
+}
+</script>
 
   <style scoped>
    .button{
