@@ -1,13 +1,11 @@
 <template>
-  <v-card>
-    <FormComp/>
-   
-    <v-btn
+  <div>
+    <!--<v-btn
       class="mx-2"
       fab
       dark
       color="indigo"
-      @click="addPerson(person)"
+      @click="addPerson"
     >
       <v-icon dark>
         mdi-plus
@@ -18,7 +16,7 @@
       fab
       dark
       color="indigo"
-      @click="editPerson(person)"
+      @click="editPerson"
     >
       <v-icon dark>
         mdi-pencil
@@ -30,14 +28,14 @@
       fab
       dark
       color="indigo"
-      @click="deletePerson(person)"
+      @click="deletePerson"
     >
       <v-icon dark>
         mdi-delete
       </v-icon>
-    </v-btn>
+    </v-btn>-->
 
-  </v-card>  
+  </div>  
 </template>
 
 <script>
@@ -50,28 +48,20 @@ export default {
   },
   data() {
     return {
-      people: [],
-      name: '',
-      age: '',
-      email: ''
+      count: 1,
+      values: {},
     }
   },
   methods: {
     addPerson() {
-      const id = this.people.length + 1
-      this.people.push({ id, name: this.name, age: this.age, email: this.email })
-      this.name = ''
-      this.age = ''
-      this.email = ''
+      this.count++;
+  
     },
-    editPerson(person) {
-      this.name = person.name
-      this.age = person.age
-      this.email = person.email
-      this.deletePerson(person)
+    editPerson() {
+      
     },
-    deletePerson(person) {
-      this.people = this.people.filter(p => p.id !== person.id)
+    deletePerson(n) {
+      this.count--;
     }
   }
 }

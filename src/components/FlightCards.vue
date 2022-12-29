@@ -12,8 +12,8 @@
               <p>{{item.name}}</p>
               </div>
               <div class="block">
-                div>
-                 <p>{precio}</p>
+                <div>
+                 <p>{precio}</p></div>
                </div>
                <div>
                  <btn class="submit">comprar</btn>

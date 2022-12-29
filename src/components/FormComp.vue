@@ -7,7 +7,7 @@
         md="8"
         lg="6"
       >
-        <v-card ref="form" class ="my-card">
+      <Card>
           <v-card-text>
             <v-text-field
               ref="name"
@@ -89,14 +89,21 @@
               Submit
             </v-btn>
           </v-card-actions>
-        </v-card>
+        </Card>
+      <AddPass/>
       </v-col>
     </v-row>
 </template>
 
 
 <script>
+import AddPass from "../components/AddPassenger.vue"
+
   export default {
+    name: 'FormComp',
+     components: {
+      AddPass
+  },
     data: () => ({
     doctypes: ['DNI', 'C.E', 'Pasaporte'],
     errorMessages: '',
