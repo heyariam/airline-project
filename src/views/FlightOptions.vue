@@ -1,7 +1,7 @@
 <template>
  <v-container>
       <v-row justify="space-around">
-        <v-card>  
+        <Card>  
           <v-card-text justify-content= "row">
             <div class="block">
               <p>{{item.name}}</p>
@@ -19,7 +19,7 @@
                  <btn class="submit">comprar</btn>
                </div>
           </v-card-text>
-        </v-card>
+        </Card>
       </v-row>
     </v-container>
 </template>
