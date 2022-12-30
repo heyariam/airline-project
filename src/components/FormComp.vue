@@ -90,20 +90,20 @@
             </v-btn>
           </v-card-actions>
         </Card>
-      <AddPass/>
+      <DynButtons/>
       </v-col>
     </v-row>
 </template>
 
 
 <script>
-import AddPass from "../components/AddPassenger.vue"
+import DynButtons from "./DynButtons.vue"
 
   export default {
     name: 'FormComp',
      components: {
-      AddPass
-  },
+    DynButtons
+},
     data: () => ({
     doctypes: ['DNI', 'C.E', 'Pasaporte'],
     errorMessages: '',

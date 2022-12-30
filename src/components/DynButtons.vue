@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-button v-on:click="addCard"> 
+  <div class="button">
+    <v-button v-on:click="addCard" > 
       <v-icon dark>mdi-plus</v-icon>
     </v-button>
     <v-button>
@@ -14,27 +14,30 @@
 </template>
 
 <script>
+import Button from "./UI/Button.vue";
+import Card from './UI/Card.vue';
 
 export default {
+  components: {
+    Card
+  },
   data() {
     return {
-      count: 1,
-      values: {},
+      Card
     }
   },
   methods: {
-    addPerson() {
-      this.count++;
-  
-    },
-    editPerson() {
-      
-    },
-    deletePerson(n) {
-      this.count--;
+    addCard() {
+      // Add a new card to the cards array
+      this.cards.push({
+        id: this.cards.length + 1,
+        title: 'Card ' + (this.cards.length + 1),
+        description: 'Description for card ' + (this.cards.length + 1)
+      });
     }
   }
 }
+
 </script>
 
 <style>
