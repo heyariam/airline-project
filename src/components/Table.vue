@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <h4>Ingresar datos</h4>
-        <div> 
+   <div class="maincontainer">
+    <div class="cardcontent items-end-space-x-3">
+        <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
+        <div class="flex-justify-center items-end-space-x-3"> 
             <div> 
                 <v-text-field ref="name" v-model="name" label="Nombre" required></v-text-field>
             </div>
@@ -21,19 +22,19 @@
                 <v-btn> Agregar </v-btn>
             </div>
         </div>
-        <div> 
-            <table>
+        <div class="overflow-x-auto relative sm:rounded-lg"> 
+            <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                 <thread> 
                     <h4>Datos pasajeros</h4>
                 </thread>
                     <tbody>
-                        <tr>
-                            <th>{{  }}</th>
-                            <th>{{  }}</th>
-                            <th>{{  }}</th>
-                            <th>{{  }}</th>
-                            <th>{{  }}</th>
-                        </tr>
+                        <tr class="bg white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th class="py-4 px-6">{{data.name}}</th>
+                            <th class="py-4 px-6">{{data.lastname}}</th>
+                            <th class="py-4 px-6">{{data.nationality}}</th>
+                            <th class="py-4 px-6">{{data.doctype}}</th>
+                            <th class="py-4 px-6">{{data.numdoc}}</th>
+                       
                         <td>
                             <div> 
                                 <v-btn> Editar </v-btn>
@@ -42,6 +43,7 @@
                                 <v-btn> Eliminar </v-btn>
                             </div>
                         </td>
+                    </tr>
                     </tbody>
             </table>
         </div>
@@ -51,18 +53,65 @@
         </div>
 
     </div>
-
+</div>
 </template>
 
 <script>
 
 export default{
-    data: () => (
-    {
+    data(){
+    return{
     items: ['DNI', 'C.E', 'Pasaporte'],
+    passengerData:[
+        {
+            id: "",
+            name: "",
+            lastname: "",
+            nationality: "",
+            doctype: "",
+            numdoc: "",
+        }
+    ]
 }
-    )
+    },
+    methods: {
+        getData(id){
+            var dataPass = this.passengerData.filter((data) => (data.id == id))
+            //
+            this.name = dataPass.name
+            this.lastname = dataPass.lastname
+            this.nationality = dataPass.nationality
+            this.doctype = dataPass.doctype
+            this.numdoc = dataPass.numdoc
+        },
+        saveData(){
+            const id= this.passengerData.lenght + 1
+            const data = {
+                id: id,
+                name: this.name,
+                lastname: this.lastname,
+                nationality: this.nationality,
+                doctype: this.doctype,
+                numdoc: this.numdoc,
+            }
+        }
+    }
 }
 
 
 </script>
+
+<style scoped>
+ *{
+    margin: 0px;
+    padding: 0px;
+ }
+ .maincontainer{
+    width: 100%;
+ }
+ .cardcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+</style>
