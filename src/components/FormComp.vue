@@ -58,8 +58,8 @@
           </v-card-text>
           <v-divider class="mt-12"></v-divider>
           <v-card-actions>
-            <v-btn text>
-              Cancel
+            <v-btn text @click="navigateToPage">
+              Cancelar
             </v-btn>
             <v-spacer></v-spacer>
             <v-slide-x-reverse-transition>
@@ -78,7 +78,7 @@
                     <v-icon>mdi-refresh</v-icon>
                   </v-btn>
                 </template>
-                <span>Refresh form</span>
+                <span>Refrescar</span>
               </v-tooltip>
             </v-slide-x-reverse-transition>
             <v-btn
@@ -86,7 +86,7 @@
               text
               @click="submit"
             >
-              Submit
+              Registrar
             </v-btn>
           </v-card-actions>
         </Card>
@@ -159,6 +159,9 @@ import AddPass from "../components/AddPassenger.vue"
         this.$refs[f].validate(true)
       })
     },
+    navigateToPage() {
+      this.$router.push({ path: '/inicio'})
+    }
   },
 }
 

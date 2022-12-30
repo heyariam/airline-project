@@ -69,7 +69,7 @@
             @click="navigateToPage"
             rounded
             color="error">
-            Buscar vuelos</v-btn>
+            Registrar</v-btn>
           </v-form>
         </v-card-text>
     </v-col>
@@ -106,7 +106,7 @@ export default {
   },
     methods: {
     navigateToPage() {
-      this.$router.push({ path: '/vuelos'})
+      this.$router.push({ path: '/registro'})
     }
   }
   }
