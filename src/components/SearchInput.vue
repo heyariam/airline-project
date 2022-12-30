@@ -100,6 +100,9 @@ export default {
     fromDateDisp() {
       return this.fromDateVal;
     },
+    toDateDisp(){
+      return this.toDateVal;
+    },
   },
     methods: {
     navigateToPage() {
