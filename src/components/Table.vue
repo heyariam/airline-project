@@ -1,35 +1,33 @@
 <template>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Option</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="user in users" :key="user.id">
-        <td>
-          <input type="text" v-model="user.name" />
-        </td>
-        <td>
-          <input type="email" v-model="user.email" />
-        </td>
-        <td>
-          <select v-model="user.selectedOption">
-            <option v-for="option in options" v-bind:key="option">{{ option }}</option>
-          </select>
-        </td>
-      </tr>
-    </tbody>
+ <div>
+    <h4>Ingresar datos</h4>
+    <div> 
+        <div> 
+            <v-text-field ref="name" v-model="name" label="Nombre" required></v-text-field>
+        </div>
+        <div> 
+            <v-text-field ref="lastname" v-model="lastname" label="Apellido" required></v-text-field>
+        </div>
+        <div> 
+            <v-text-field ref="nationality" v-model="name" label="Nacionalidad" required></v-text-field>
+        </div>
+        <div> 
+            <v-autocomplete ref="doctype" v-model="doctype" label="Tipo de documento" placeholder="Seleccionar..." required></v-autocomplete>
+        </div>
+        <div> 
+            <v-text-field ref="name" v-model="name" label="Nombre" required></v-text-field>
+        </div>
+    </div>
+ </div>
+
+
   </table>
 
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 
-export default defineComponent({
+export default({
   data: {
             personal_datas: [{
                 nombre: '',
