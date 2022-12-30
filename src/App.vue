@@ -16,7 +16,7 @@ export default {
   components: {
     Homeview,
     Card,
-    'v-button': Button
+    'v-btn': Button
   }
 }
 

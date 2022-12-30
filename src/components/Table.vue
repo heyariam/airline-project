@@ -17,10 +17,15 @@
             <div> 
                 <v-text-field ref="numdoc" v-model="name" label="Número de documento" required></v-text-field>
             </div>
+            <div> 
+                <v-btn> Agregar </v-btn>
+            </div>
         </div>
         <div> 
             <table>
-                <thread>
+                <thread> 
+                    <h4>Datos pasajeros</h4>
+                </thread>
                     <tbody>
                         <tr>
                             <th>{{  }}</th>
@@ -29,9 +34,20 @@
                             <th>{{  }}</th>
                             <th>{{  }}</th>
                         </tr>
+                        <td>
+                            <div> 
+                                <v-btn> Editar </v-btn>
+                            </div>
+                            <div> 
+                                <v-btn> Eliminar </v-btn>
+                            </div>
+                        </td>
                     </tbody>
-                </thread>
             </table>
+        </div>
+
+        <div> 
+            <v-btn>Guardar información</v-btn>
         </div>
 
     </div>
