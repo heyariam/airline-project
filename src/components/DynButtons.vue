@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-button> 
+    <v-button v-on:click="addCard"> 
       <v-icon dark>mdi-plus</v-icon>
     </v-button>
     <v-button>
