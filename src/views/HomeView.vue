@@ -1,7 +1,7 @@
 <template>
   <div>
       <NavBar />
-      <Table/>
+      <Tabla />
     <Footer />
   </div>
 </template>
@@ -12,14 +12,14 @@ import NavBar from "../components/NavBar.vue";
 import Footer from "../components/Footer.vue";
 import Herowrapper from "./Herowrapper.vue";
 //import Register from "@/views/Register.vue";
-import Table from "../components/Table.vue";
+import Tabla from "../components/Table.vue";
+
 
 export default defineComponent({
   name: "HomeView",
   components: {
     NavBar,
-    Table,
-   
+    Tabla,
     Footer,
    
 }
