@@ -82,7 +82,13 @@ export default{
     },
     methods: {
         getData(id){
-            alert(id)
+        var dataPass = this.passengerData.filter((data =>(data.id == id)))
+        this.name = dataPass[0].name
+        this.lastname = dataPass[0].lastname
+        this.nationality = dataPass[0].nationality
+        this.doctype = dataPass[0].doctype
+        this.docnumber = dataPass[0].docnumber
+
         },
         saveData(){
             const id= this.passengerData.length + 1
