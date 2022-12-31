@@ -18,7 +18,7 @@
                 <v-text-field v-model="docnumber" label="Número de documento" required></v-text-field>
             </div>
             <div> 
-                <v-btn @click="saveData()"> Agregar </v-btn>
+                <v-btn @click="saveData(haveID)"> Agregar </v-btn>
             </div>
         </div>
         <div class="overflow-x-auto relative sm:rounded-lg"> 
@@ -36,10 +36,10 @@
                        
                         <td>
                             <div> 
-                                <v-btn @click="getData()"> Editar </v-btn>
+                                <v-btn @click="getData(data.id)"> Editar </v-btn>
                             </div>
                             <div> 
-                                <v-btn> Eliminar </v-btn>
+                                <v-btn @click="deleteData(data.id)"> Eliminar </v-btn>
                             </div>
                         </td>
                     </tr>
@@ -66,33 +66,45 @@ export default{
         nationality: "",
         doctype: "",
         docnumber: "",
-        haveID:false,
+        haveID:null,
 
-        passengerData:[
+       passengerData:[
             {
                 id: "1",
                 name: "Arianna",
                 lastname: "Avalos",
                 nationality: "Peruana",
                 doctype: "DNI",
-                docnumber: "123456",
+                docnumber: "1234567",
             }
         ]
 }
     },
     methods: {
         getData(id){
-        var dataPass = this.passengerData.filter((data =>(data.id == id)))
-        this.name = dataPass[0].name
-        this.lastname = dataPass[0].lastname
-        this.nationality = dataPass[0].nationality
-        this.doctype = dataPass[0].doctype
-        this.docnumber = dataPass[0].docnumber
+            this.haveID = true 
+            var dataPass = this.passengerData.filter((data =>(data.id == id)))
+            //assign to input
+            this.name = dataPass[0].name
+            this.lastname = dataPass[0].lastname
+            this.nationality = dataPass[0].nationality
+            this.doctype = dataPass[0].doctype
+            this.docnumber = dataPass[0].docnumber
 
         },
-        saveData(){
-            const id= this.passengerData.length + 1
-            const data = {
+        saveData(haveID){
+            //update
+            if(haveID){
+                var dataPass = this.passengerData.filter((data =>(data.id == haveID)))
+                dataPass[0].name = this.name
+                dataPass[0].lastname = this.lastname
+                dataPass[0].nationality = this.nationality
+                dataPass[0].doctype = this.doctype
+                dataPass[0].docnumber = this.docnumber
+            }else {
+                // save
+                const id= this.passengerData.length + 1
+                const data = {
                 id: id,
                 name: this.name,
                 lastname: this.lastname,
@@ -100,12 +112,16 @@ export default{
                 doctype: this.doctype,
                 docnumber: this.docnumber,
             }
-        this.passengerData.push(data);
-        console.log(this.passengerData)
-        }
+                this.passengerData.push(data);
+            }
+            
+        },
+        deleteData(id){
+         var index = this.passengerData.findIndex((data) => data.id == id)
+         this.passengerData.splice(index, 1)
+        },
     }
-    }
-
+}
 
 
 </script>
