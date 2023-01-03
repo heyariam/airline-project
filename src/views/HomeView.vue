@@ -13,7 +13,7 @@ import Footer from "../components/Footer.vue";
 import Herowrapper from "./Herowrapper.vue";
 //import Register from "@/views/Register.vue";
 import Table from "../components/Table.vue";
-import axios from "axios";
+
 
 export default defineComponent({
   name: "HomeView",

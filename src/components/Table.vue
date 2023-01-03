@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import axios from "axios";
 
 export default{
     data(){
@@ -68,30 +69,9 @@ export default{
         docnumber: "",
         haveID:null,
 
-       passengerData:[
-            {
-                id: "1",
-                name: "Arianna",
-                lastname: "Avalos",
-                nationality: "Peruana",
-                doctype: "DNI",
-                docnumber: "1234567",
-            }
-        ]
 }
     },
     methods: {
-        getData(id){
-            this.haveID = true 
-            var dataPass = this.passengerData.filter((data =>(data.id == id)))
-            //assign to input
-            this.name = dataPass[0].name
-            this.lastname = dataPass[0].lastname
-            this.nationality = dataPass[0].nationality
-            this.doctype = dataPass[0].doctype
-            this.docnumber = dataPass[0].docnumber
-
-        },
         saveData(haveID){
             //update
             if(haveID){
