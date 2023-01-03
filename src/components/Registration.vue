@@ -53,7 +53,7 @@ export default{
             }else {
                 // save
                 const id= this.passengerData.length + 1
-                const result = axios.post(" http://localhost:3000/passengerData", {
+                const data = axios.post(" http://localhost:3000/passengerData", {
                 id: id,
                 name: this.name,
                 lastname: this.lastname,
