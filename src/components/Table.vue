@@ -1,27 +1,7 @@
 <template>
     <div>
-        <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
-        <div class="flex-justify-center items-end-space-x-3"> 
-            <div> 
-                <v-text-field v-model="name" label="Nombre" required></v-text-field>
-            </div>
-            <div> 
-                <v-text-field v-model="lastname" label="Apellido" required></v-text-field>
-            </div>
-            <div> 
-                <v-text-field v-model="nationality" label="Nacionalidad" required></v-text-field>
-            </div>
-            <div> 
-                <v-select :items="items" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
-            </div>
-            <div> 
-                <v-text-field v-model="docnumber" label="Número de documento" required></v-text-field>
-            </div>
-            <div> 
-                <v-btn @click="saveData(haveID)"> Agregar </v-btn>
-            </div>
-        </div>
-        <div class="overflow-x-auto relative sm:rounded-lg"> 
+        <AskInfo />
+            <div class="overflow-x-auto relative sm:rounded-lg"> 
             <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                 <thead> 
                     <h4>Datos pasajeros</h4>
@@ -55,9 +35,13 @@
 </template>
 
 <script>
+import AskInfo from "./AskInfo.vue";
 import axios from "axios";
 
 export default{
+    components:{
+        AskInfo
+    },
     data(){
         return{
         items: ['DNI', 'C.E', 'Pasaporte'],
