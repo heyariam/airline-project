@@ -1,12 +1,13 @@
-[
-  {
-      "DatosPersonales": {
-        "id": ,
-        "name": ,
-        "lastname": , 
-        "nationality": ,
-        "documenttype":,
-        "documentnumber": ,
+{
+      "DatosPersonales": [{
+        "id": "1",
+        "name": "Arianna",
+        "lastname": "Avalos",
+        "nationality":"Peruana",
+        "documenttype": "DNI",
+        "documentnumber": "1234567"
       }
+      
+      ]
   }
-]
+  
