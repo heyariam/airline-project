@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default{
     data(){
@@ -63,16 +62,9 @@ export default{
             })
                 this.passengerData.push(data);
         }
-    },
-    mounted()
-    {
-        let user = localStorage.getItem("user-info");
-        if(!user)
-        {
-            this.$router.push({name:"signup"})
-        }
     }
-    }
+
 }
+        }
        }   }
 </script>
