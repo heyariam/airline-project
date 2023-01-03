@@ -97,12 +97,11 @@
 
 
 <script>
-import DynButtons from "./DynButtons.vue"
 
   export default {
     name: 'FormComp',
      components: {
-    DynButtons
+
 },
     data: () => ({
     doctypes: ['DNI', 'C.E', 'Pasaporte'],
