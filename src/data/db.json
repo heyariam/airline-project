@@ -1,13 +1,15 @@
 {
-      "DatosPersonales": [{
+      "passengerData": [
+        {
         "id": "1",
         "name": "Arianna",
         "lastname": "Avalos",
         "nationality":"Peruana",
-        "documenttype": "DNI",
-        "documentnumber": "1234567"
+        "doctype": "DNI",
+        "docnumber": "1234567"
       }
       
       ]
-  }
+    }
+  
   
