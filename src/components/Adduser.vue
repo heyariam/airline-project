@@ -38,7 +38,22 @@ export default{
         haveID:null,
 
     methods:{
-        saveData(haveID){
+      async saveData()
+      {
+        const data = await axios.post("http://localhost:3000/passengerData", {
+                id: id,
+                name: this.name,
+                lastname: this.lastname,
+                nationality: this.nationality,
+                doctype: this.doctype,
+                docnumber: this.docnumber,
+            });
+            if(result.status ==201)
+            {
+              this.$router.push({name: "HomeView"})
+            }
+      },
+        /*saveData(haveID){
             //update
             if(haveID){
                 var dataPass = this.passengerData.filter((data =>(data.id == haveID)))
@@ -50,7 +65,7 @@ export default{
             }else {
                 // save
                 const id= this.passengerData.length + 1
-                const data = axios.post(" http://localhost:3000/passengerData", {
+                const data = await axios.post("http://localhost:3000/passengerData", {
                 id: id,
                 name: this.name,
                 lastname: this.lastname,
@@ -60,7 +75,7 @@ export default{
             })
                 this.passengerData.push(data);
         }
-    }
+    }*/
     }
 }
        }   }
