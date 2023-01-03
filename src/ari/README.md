@@ -13,3 +13,7 @@ detalles durante la semana :')
 
 /////
 02.01.23
+
+Separar el input y la tabla donde se muestran los resultados de los datos ingresados, cada uno en su propio file y que el input sea un component. Que tabla sea mostrado en una hoja nueva (como ejemplo, usuarios o algo asi) dando la opcion de poder editar y eliminar
+
+ahorita todo esta en una sola pagina 
