@@ -67,10 +67,10 @@ export default{
         nationality: "",
         doctype: "",
         docnumber: "",
-        haveID:null,
+        haveID:null
 
-}
-    },
+     },
+    }
     methods: {
         getData(id){
             this.haveID = true 
