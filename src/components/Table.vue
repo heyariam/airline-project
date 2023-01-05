@@ -67,7 +67,17 @@ export default{
         nationality: "",
         doctype: "",
         docnumber: "",
-        haveID:null
+        haveID:null,
+        passengerData:[
+            {
+            "id": "1",
+            "name": "Arianna",
+            "lastname": "Avalos",
+            "nationality": "Peruana",
+            "doctype": "DNI",
+            "docnumber": "1234567"
+            },
+  ]
 
      }
 },
