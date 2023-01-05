@@ -69,8 +69,8 @@ export default{
         docnumber: "",
         haveID:null
 
-     },
-    }
+     }
+},
     methods: {
         getData(id){
             this.haveID = true 
