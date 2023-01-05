@@ -5,3 +5,10 @@ const expresiones = {
   docnumber: /[A-Za-z0-9]+/i
 }
 
+const campos = {
+  name: false,
+  lastname: false,
+  nationality: false,
+  docnumber: false
+}
+
