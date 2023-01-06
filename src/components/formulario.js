@@ -24,7 +24,7 @@ const validarFormulario = (e) =>{
       validarCampo(expresiones.nationality, e.target, "nationality");
       break;
       case "docnumber":
-      validarCampo(expresiones.docnnumber, e.target, "docnumber");
+      validarCampo(expresiones.docnumber, e.target, "docnumber");
       break;
   }
 }
