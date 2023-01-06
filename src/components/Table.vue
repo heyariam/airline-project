@@ -28,7 +28,7 @@
                  <!--Grupo: Numero documento-->
                  <div>
 
-                        <v-text-field v-model="docnumber" label="Número de documento"></v-text-field>
+                        <v-text-field v-model="docnumber" label="Número de documento" :rules="[validateDocNumber]" ></v-text-field>
 
                 </div><br/>
                  <!--Grupo: Button-->
@@ -139,7 +139,6 @@ export default{
          this.passengerData.splice(index, 1)
         },
 
-
         validateName(name) {
             return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name) : name;
 
@@ -153,10 +152,23 @@ export default{
             validateNationality(nationality) {
             return 'Ingresa un dato válido (solo letras permitidas)' ? nationality !== /^([a-zA-Z]+)$/.test(nationality) : nationality;
         
-            }
+            },
+
+           /* validateDocNumber(doctype , docnumber) {
+                if (doctype === 'DNI' && 'Pasaporte' && docnumber === /^([0-9]+)$/.test(docnumber)) {
+                    return 'Solo numeros permitidos';
+                } else if (doctype === 'C.E' &&  docnumber === /^([a-zA-Z]+)$/.test(docnumber)) {
+                    return 'Solo números y letras permitidas';
+                } else {
+                    return docnumber;
+    
+                }
+            }*/
           
         }
     }
+
+
         /*validateLastName(lastname){
             if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
             return 'Please enter a valid name (only letters are allowed)';
