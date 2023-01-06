@@ -13,7 +13,7 @@
                  <!--Grupo: Apellido-->
                  <div>
                             <v-text-field class="input" v-model="lastname" label="Apellido" required
-                            :rules="[() => !!nationality || 'Ingresa un dato válido']"  
+                            :rules="[validateLastName]"  
                             >
                         
                         </v-text-field>
@@ -84,12 +84,12 @@
 
 <script>
 
-/*const expresiones = {
-    name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
-    lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
-    nationality: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
+/* REGEX
+    name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
+    lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
+    nationality: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
     docnumber: /[A-Za-z0-9]+/i
-}*/
+*/
 
 
 export default{
@@ -104,14 +104,7 @@ export default{
         docnumber: "",
         haveID:null,
         passengerData:[
-            {
-            "id": "1",
-            "name": "Arianna",
-            "lastname": "Avalos",
-            "nationality": "Peruana",
-            "doctype": "DNI",
-            "docnumber": "1234567"
-            },
+          
   ]
 
      }
@@ -156,10 +149,25 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
-    }
+        validateLastName(lastname) {
+            return lastname === ''
+                ? 'Obligatorio'
+                : !/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname)
+                ? 'Ingresa un dato válido (solo letras y espacios permitidos)'
+                : '';
+            }
 
+        /*validateLastName(lastname){
+            if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
+            return 'Please enter a valid name (only letters are allowed)';
+        } else if (lastname === '') {
+            return 'Ingresa un dato válido';
+        }
+    }*/
+        },
 
 }
+
 
 
 
