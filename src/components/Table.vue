@@ -7,7 +7,7 @@
                 <!--Grupo: Nombre-->
                 <div>
                         <v-text-field class="input" v-model="name" label="Nombre" required
-                        :rules="[validateName]">
+                        :rules="[() => !!name || 'Ingresa un dato válido']"  >
                      </v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
@@ -36,7 +36,7 @@
                         :rules="[
                                 () => !!docnumber || 'Ingresa un dato válido',
                                 () => !!docnumber && docnumber.length <= 9 || 'El documento debe tener máximo 9 carácteres',
-                                docnumberCheck
+                              
                             ]"
                         >
                         </v-text-field>
@@ -156,19 +156,7 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
-    },
-    validateName(name){
-        if(this.name === ""){
-            return  'Ingresa un nombre válido';
-            }else{
-                name = this.name;
-                if (/^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
-                return "Solo letras y espacios permitidos"
-             }
-    
-
-            }
-        }
+    }
 
 
 }
