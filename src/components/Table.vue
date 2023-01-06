@@ -7,8 +7,7 @@
                 <!--Grupo: Nombre-->
                 <div>
                         <v-text-field class="input" v-model="name" label="Nombre" required
-                        :rules="[() => !!name || 'Ingresa un nombre válido',
-                                () => /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/]">
+                        :rules="[validateName]">
                      </v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
@@ -22,7 +21,7 @@
                  <!--Grupo: Nacionalidad-->
                  <div>
                         <v-text-field class="input" v-model="nationality" label="Nacionalidad" required
-                        :rules="[() => !!nationality || 'Ingresa un dato válido', nationalityCheck]"  
+                        :rules="[() => !!nationality || 'Ingresa un dato válido']"  
                         >
                     </v-text-field>
                 </div>   <br/>
@@ -157,7 +156,21 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
-    }
+    },
+    validateName(name){
+        if(this.name === ""){
+            return  'Ingresa un nombre válido';
+            }else{
+                name = this.name;
+                if (/^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
+                return "Solo letras y espacios permitidos"
+             }
+    
+
+            }
+        }
+
+
 }
 
 
