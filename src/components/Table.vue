@@ -1,38 +1,30 @@
 <template>
-           <div class = "formulario" id="formulario">
+           <div>
             <!--Título-->
             <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
                 <!--Grupo Formulario-->
             <div class="flex-justify-center items-end-space-x-3"> 
                 <!--Grupo: Nombre-->
-                <div class="formulario__grupo" id="grupo__name">
-                    <div class="formulario__grupo-input"> 
+                <div>
                         <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
-                    </div>
                  </div>
                  <!--Grupo: Apellido-->
-                 <div class="formulario__grupo" id="grupo__lastname">
-                        <div class="formulario__grupo-input"> 
+                 <div>
                             <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
                 </div>
                  <!--Grupo: Nacionalidad-->
-                 <div class="formulario__grupo" id="grupo__nationality">
-                    <div class="formulario__grupo-input"> 
+                 <div>
                         <v-text-field class="input" v-model="nationality" label="Nacionalidad" required></v-text-field>
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                    </div>
                 </div>   
                  <!--Grupo: Tipo de documento-->
-                <div class="formulario__grupo-input"> 
+                <div> 
                     <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
                 </div>
                  <!--Grupo: Numero documento-->
-                 <div class="formulario__grupo" id="grupo__docnumber">
-                    <div class="formulario__grupo-input"> 
+                 <div>
+
                         <v-text-field class="input" v-model="docnumber" label="Número de documento" required></v-text-field>
-                    </div>
+
                 </div>
                  <!--Grupo: Button-->
                 <div> 
