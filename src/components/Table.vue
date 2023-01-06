@@ -7,13 +7,13 @@
                 <!--Grupo: Nombre-->
                 <div>
                         <v-text-field class="input" v-model="name" label="Nombre" required
-                        :rules="[() => !!name || 'Ingresa un dato válido']"  >
+                        :rules="[validateName]"   >
                      </v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
                  <div>
                             <v-text-field class="input" v-model="lastname" label="Apellido" required
-                            :rules="[validateLastName]"  
+                            :rules="[validateName]"  
                             >
                         
                         </v-text-field>
@@ -21,23 +21,20 @@
                  <!--Grupo: Nacionalidad-->
                  <div>
                         <v-text-field class="input" v-model="nationality" label="Nacionalidad" required
-                        :rules="[() => !!nationality || 'Ingresa un dato válido']"  
+                        :rules="[validateNationality]"   
                         >
                     </v-text-field>
                 </div>   <br/>
                  <!--Grupo: Tipo de documento-->
                 <div> 
-                    <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
+                    <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento" :rules="[validateDocType]"
+                    >{{items}}</v-select>
                 </div><br/>
                  <!--Grupo: Numero documento-->
                  <div>
 
                         <v-text-field class="input" v-model="docnumber" label="Número de documento" required
-                        :rules="[
-                                () => !!docnumber || 'Ingresa un dato válido',
-                                () => !!docnumber && docnumber.length <= 9 || 'El documento debe tener máximo 9 carácteres',
-                              
-                            ]"
+                        :rules="[validateDocNum]"
                         >
                         </v-text-field>
 
@@ -87,7 +84,7 @@
 /* REGEX
     name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
     lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
-    nationality: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
+    nationality: [A-Za-z]
     docnumber: /[A-Za-z0-9]+/i
 */
 
@@ -149,13 +146,46 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
-        validateLastName(lastname) {
-            return lastname === ''
+        validateName(name) {
+            return name === ''
                 ? 'Obligatorio'
-                : !/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname)
+                : !/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)
                 ? 'Ingresa un dato válido (solo letras y espacios permitidos)'
                 : '';
-            }
+            },
+            validateNationality(nationality) {
+            return nationality === ''
+                ? 'Obligatorio'
+                : ! [A-Za-z].test(nationality)
+                ? 'Ingresa un dato válido (solo letras permitidas)'
+                : '';
+            },
+
+                validateDocType(doctype){
+                    switch (doctype){
+                    case "DNI":
+                        return docnumber === ''
+                        ? 'Obligatorio'
+                        : ! /^[0-9]+$/.test(docnumber) && docnumber.length <= 8
+                        ? 'El documento debe tener máximo 8 números'
+                        : '';
+                    break;
+                    case "C.E":
+                    return docnumber === ''
+                        ? 'Obligatorio'
+                        : ! /^[0-9]+$/.test(docnumber) && docnumber.length <= 9
+                        ? 'El documento debe tener máximo 9 carácteres'
+                        : '';
+                        break;
+                        case "Pasaporte":
+                        return docnumber === ''
+                        ? 'Obligatorio'
+                        : ! /^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length <= 9
+                        ? 'El documento debe tener máximo 9 carácteres'
+                        : '';
+                        break;
+                    }
+                }
 
         /*validateLastName(lastname){
             if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
