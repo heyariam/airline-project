@@ -34,7 +34,7 @@
                  <div>
 
                         <v-text-field class="input" v-model="docnumber" label="Número de documento" required
-                        :rules="[validateDocNum]"
+                        :rules="[validateDocType]"
                         >
                         </v-text-field>
 
@@ -156,36 +156,26 @@ export default{
             validateNationality(nationality) {
             return nationality === ''
                 ? 'Obligatorio'
-                : ! [A-Za-z].test(nationality)
+                : ! [ A-Za-z].test(nationality)
                 ? 'Ingresa un dato válido (solo letras permitidas)'
                 : '';
             },
 
-                validateDocType(doctype){
-                    switch (doctype){
-                    case "DNI":
-                        return docnumber === ''
-                        ? 'Obligatorio'
-                        : ! /^[0-9]+$/.test(docnumber) && docnumber.length <= 8
-                        ? 'El documento debe tener máximo 8 números'
-                        : '';
-                    break;
-                    case "C.E":
-                    return docnumber === ''
-                        ? 'Obligatorio'
-                        : ! /^[0-9]+$/.test(docnumber) && docnumber.length <= 9
-                        ? 'El documento debe tener máximo 9 carácteres'
-                        : '';
-                        break;
-                        case "Pasaporte":
-                        return docnumber === ''
-                        ? 'Obligatorio'
-                        : ! /^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length <= 9
-                        ? 'El documento debe tener máximo 9 carácteres'
-                        : '';
-                        break;
+ 
+                validateDocType(docnumber, doctype) {
+                    if (docnumber === '') {
+                        return 'Obligatorio';
+                    } else if (doctype === 'DNI' && !/^[0-9]+$/.test(docnumber) && docnumber.length == 8) {
+                        return 'El documento debe tener máximo 8 números';
+                    } else if (doctype === 'C.E' && !/^[0-9]+$/.test(docnumber) && docnumber.length == 9) {
+                        return 'El documento debe tener máximo 9 carácteres';
+                    } else if (doctype === 'Pasaporte' && !/^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length == 9) {
+                        return 'El documento debe tener máximo 9 carácteres';
+                    } else {
+                        return '';
                     }
-                }
+                    }
+    
 
         /*validateLastName(lastname){
             if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
