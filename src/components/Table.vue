@@ -10,7 +10,6 @@
                         <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
                  </div>
                  <!--Grupo: Apellido-->
                  <div class="formulario__grupo" id="grupo__lastname">
@@ -18,7 +17,6 @@
                             <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
                 </div>
                  <!--Grupo: Nacionalidad-->
                  <div class="formulario__grupo" id="grupo__nationality">
