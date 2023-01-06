@@ -162,19 +162,21 @@ export default{
             },
 
  
-                validateDocType(docnumber, doctype) {
+            validateDocType(docnumber, doctype) {
                     if (docnumber === '') {
                         return 'Obligatorio';
-                    } else if (doctype === 'DNI' && !/^[0-9]+$/.test(docnumber) && docnumber.length == 8) {
+                    } else if (doctype === 'DNI' && /^[0-9]+$/.test(docnumber) && docnumber.length == 8) {
                         return 'El documento debe tener máximo 8 números';
-                    } else if (doctype === 'C.E' && !/^[0-9]+$/.test(docnumber) && docnumber.length == 9) {
+                    } else if (doctype === 'C.E' && /^[0-9]+$/.test(docnumber) && docnumber.length == 9) {
                         return 'El documento debe tener máximo 9 carácteres';
-                    } else if (doctype === 'Pasaporte' && !/^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length == 9) {
+                    } else if (doctype === 'Pasaporte' && /^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length == 9) {
                         return 'El documento debe tener máximo 9 carácteres';
                     } else {
                         return '';
                     }
                     }
+
+
     
 
         /*validateLastName(lastname){
