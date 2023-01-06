@@ -6,37 +6,29 @@
             <div class="flex-justify-center items-end-space-x-3"> 
                 <!--Grupo: Nombre-->
                 <div>
-                        <v-text-field class="input" v-model="name" label="Nombre" required
-                        :rules="[validateName]"   >
-                     </v-text-field>
+                        <v-text-field v-model="name" label="Nombre"
+                        :rules="[validateName]" ></v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
                  <div>
-                            <v-text-field class="input" v-model="lastname" label="Apellido" required
-                            :rules="[validateName]"  
-                            >
-                        
-                        </v-text-field>
+                            <v-text-field v-model="lastname" label="Apellido"
+                            :rules="[validateLastName]" > </v-text-field>
                 </div><br/>
                  <!--Grupo: Nacionalidad-->
                  <div>
-                        <v-text-field class="input" v-model="nationality" label="Nacionalidad" required
-                        :rules="[validateNationality]"   
-                        >
-                    </v-text-field>
+                        <v-text-field v-model="nationality" label="Nacionalidad"
+                        :rules="[validateNationality]"> </v-text-field>
                 </div>   <br/>
                  <!--Grupo: Tipo de documento-->
                 <div> 
-                    <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento" :rules="[validateDocType]"
+                    <v-select :items="items" v-model="doctype" label="Tipo de documento"
                     >{{items}}</v-select>
+                  
                 </div><br/>
                  <!--Grupo: Numero documento-->
                  <div>
 
-                        <v-text-field class="input" v-model="docnumber" label="Número de documento" required
-                        :rules="[validateDocType]"
-                        >
-                        </v-text-field>
+                        <v-text-field v-model="docnumber" label="Número de documento"></v-text-field>
 
                 </div><br/>
                  <!--Grupo: Button-->
@@ -92,7 +84,7 @@
 export default{
     data(){
         return{
-        items: ['DNI', 'C.E', 'Pasaporte'],
+        items: ['DNI', 'Pasaporte','C.E' ],
         id: "",
         name: "",
         lastname: "",
@@ -146,39 +138,25 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
+
+
         validateName(name) {
-            return name === ''
-                ? 'Obligatorio'
-                : !/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)
-                ? 'Ingresa un dato válido (solo letras y espacios permitidos)'
-                : '';
+            return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name) : name;
+
+                
             },
+            validateLastName(lastname) {
+            return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? lastname !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname) : lastname;
+                
+            },
+
             validateNationality(nationality) {
-            return nationality === ''
-                ? 'Obligatorio'
-                : ! [ A-Za-z].test(nationality)
-                ? 'Ingresa un dato válido (solo letras permitidas)'
-                : '';
-            },
-
- 
-            validateDocType(docnumber, doctype) {
-                    if (docnumber === '') {
-                        return 'Obligatorio';
-                    } else if (doctype === 'DNI' && /^[0-9]+$/.test(docnumber) && docnumber.length == 8) {
-                        return 'El documento debe tener máximo 8 números';
-                    } else if (doctype === 'C.E' && /^[0-9]+$/.test(docnumber) && docnumber.length == 9) {
-                        return 'El documento debe tener máximo 9 carácteres';
-                    } else if (doctype === 'Pasaporte' && /^[A-Za-z0-9]+$/.test(docnumber) && docnumber.length == 9) {
-                        return 'El documento debe tener máximo 9 carácteres';
-                    } else {
-                        return '';
-                    }
-                    }
-
-
-    
-
+            return 'Ingresa un dato válido (solo letras permitidas)' ? nationality !== /^([a-zA-Z]+)$/.test(nationality) : nationality;
+        
+            }
+          
+        }
+    }
         /*validateLastName(lastname){
             if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
             return 'Please enter a valid name (only letters are allowed)';
@@ -186,9 +164,44 @@ export default{
             return 'Ingresa un dato válido';
         }
     }*/
-        },
+    
 
-}
+
+       /* validateName(name){
+            if (name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
+            return 'Ingresa un dato válido (solo letras y espacios permitidos)';
+                } else if (name === /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
+                    return this.name;
+                }
+    },
+        validateLastName(lastname){
+            if (lastname !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname)){
+            return 'Ingresa un dato válido (solo letras y espacios permitidos)';
+        } else{
+            return " ";
+        }
+    },
+            validateNationality(nationality){
+                    if (nationality !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(nationality)){
+                    return 'Ingresa un dato válido (solo letras y espacios permitidos)';
+                    } else if (nationality === '') {
+                        return '';
+                    }
+            },
+
+            
+            validateDocNumber(docnumber, doctype) {
+                 if (doctype !== /[A-Za-z0-9]+/i.test(docnumber)) {
+                    return (docnumber = 'Máximo 8 carácteres (solo números permitidos)');
+                } else if (doctype === 'DNI'|| 'Pasaporte' ||'C.E' ){
+                    return this.docnumber;
+                }
+                }*/
+
+
+                    
+
+
 
 
 
