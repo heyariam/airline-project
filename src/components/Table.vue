@@ -6,26 +6,43 @@
             <div class="flex-justify-center items-end-space-x-3"> 
                 <!--Grupo: Nombre-->
                 <div>
-                        <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
-                 </div>
+                        <v-text-field class="input" v-model="name" label="Nombre" required
+                        :rules="[() => !!name || 'Ingresa un nombre válido',
+                                () => /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/]">
+                     </v-text-field>
+                 </div><br/>
                  <!--Grupo: Apellido-->
                  <div>
-                            <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
-                </div>
+                            <v-text-field class="input" v-model="lastname" label="Apellido" required
+                            :rules="[() => !!nationality || 'Ingresa un dato válido']"  
+                            >
+                        
+                        </v-text-field>
+                </div><br/>
                  <!--Grupo: Nacionalidad-->
                  <div>
-                        <v-text-field class="input" v-model="nationality" label="Nacionalidad" required></v-text-field>
-                </div>   
+                        <v-text-field class="input" v-model="nationality" label="Nacionalidad" required
+                        :rules="[() => !!nationality || 'Ingresa un dato válido', nationalityCheck]"  
+                        >
+                    </v-text-field>
+                </div>   <br/>
                  <!--Grupo: Tipo de documento-->
                 <div> 
                     <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
-                </div>
+                </div><br/>
                  <!--Grupo: Numero documento-->
                  <div>
 
-                        <v-text-field class="input" v-model="docnumber" label="Número de documento" required></v-text-field>
+                        <v-text-field class="input" v-model="docnumber" label="Número de documento" required
+                        :rules="[
+                                () => !!docnumber || 'Ingresa un dato válido',
+                                () => !!docnumber && docnumber.length <= 9 || 'El documento debe tener máximo 9 carácteres',
+                                docnumberCheck
+                            ]"
+                        >
+                        </v-text-field>
 
-                </div>
+                </div><br/>
                  <!--Grupo: Button-->
                 <div> 
                     <v-btn @click="saveData(haveID)"> Agregar </v-btn>
@@ -67,7 +84,14 @@
 </template>
 
 <script>
-import './formulario.js';
+
+/*const expresiones = {
+    name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
+    lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
+    nationality: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
+    docnumber: /[A-Za-z0-9]+/i
+}*/
+
 
 export default{
     data(){
