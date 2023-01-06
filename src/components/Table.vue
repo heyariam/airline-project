@@ -10,6 +10,7 @@
                         <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
+                    <p class="formulario__input-error">El usuario acepta caracteres alfabéticos y especiales.</p>
                  </div>
                  <!--Grupo: Apellido-->
                  <div class="formulario__grupo" id="grupo__lastname">
@@ -17,6 +18,7 @@
                             <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
+                        <p class="formulario__input-error">El usuario acepta caracteres alfabéticos y especiales..</p>
                 </div>
                  <!--Grupo: Nacionalidad-->
                  <div class="formulario__grupo" id="grupo__nationality">
@@ -24,7 +26,7 @@
                         <v-text-field class="input" v-model="nationality" label="Nacionalidad" required></v-text-field>
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                    <p class="formulario__input-error">El usuario acepta caracteres alfabéticos y especiales.</p>
                 </div>   
                  <!--Grupo: Tipo de documento-->
                 <div class="formulario__grupo-input"> 
@@ -35,7 +37,7 @@
                     <div class="formulario__grupo-input"> 
                         <v-text-field class="input" v-model="docnumber" label="Número de documento" required></v-text-field>
                     </div>
-                    <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                    <p class="formulario__input-error">Se acepta caracteres alfabéticos y especiales de hasta 9 dígitos.</p>
                 </div>
                  <!--Grupo: Button-->
                 <div> 
