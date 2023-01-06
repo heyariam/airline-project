@@ -1,3 +1,6 @@
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario .input");
+
 const expresiones = {
   name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
   lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/,
@@ -28,3 +31,4 @@ const validarFormulario = (e) =>{
       break;
   }
 }
+

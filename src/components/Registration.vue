@@ -1,28 +1,28 @@
 <template>
-          <div>
+          <div class = "formulario" id="formulario">
             <!--Título-->
             <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
                 <!--Grupo Formulario-->
             <div class="flex-justify-center items-end-space-x-3"> 
                 <!--Grupo: Nombre-->
                 <div> 
-                    <v-text-field v-model="name" label="Nombre" required></v-text-field>
+                    <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
                 </div>
                  <!--Grupo: Apellido-->
                 <div> 
-                    <v-text-field v-model="lastname" label="Apellido" required></v-text-field>
+                    <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
                 </div>
                  <!--Grupo: Nacionalidad-->
                 <div> 
-                    <v-text-field v-model="nationality" label="Nacionalidad" required></v-text-field>
+                    <v-text-field class="input" v-model="nationality" label="Nacionalidad" required></v-text-field>
                 </div>
                  <!--Grupo: Tipo de documento-->
                 <div> 
-                    <v-select :items="items" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
+                    <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
                 </div>
                  <!--Grupo: Numero documento-->
                 <div> 
-                    <v-text-field v-model="docnumber" label="Número de documento" required></v-text-field>
+                    <v-text-field class="input" v-model="docnumber" label="Número de documento" required></v-text-field>
                 </div>
                  <!--Grupo: Button-->
                 <div> 

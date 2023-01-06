@@ -1,25 +1,49 @@
 <template>
-          <div>
+           <div class = "formulario" id="formulario">
+            <!--Título-->
             <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
+                <!--Grupo Formulario-->
             <div class="flex-justify-center items-end-space-x-3"> 
-                <div> 
-                    <v-text-field v-model="name" label="Nombre" required></v-text-field>
+                <!--Grupo: Nombre-->
+                <div class="formulario__grupo" id="grupo__name">
+                    <div class="formulario__grupo-input"> 
+                        <v-text-field class="input" v-model="name" label="Nombre" required></v-text-field>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                 </div>
+                 <!--Grupo: Apellido-->
+                 <div class="formulario__grupo" id="grupo__lastname">
+                        <div class="formulario__grupo-input"> 
+                            <v-text-field class="input" v-model="lastname" label="Apellido" required></v-text-field>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
                 </div>
-                <div> 
-                    <v-text-field v-model="lastname" label="Apellido" required></v-text-field>
+                 <!--Grupo: Nacionalidad-->
+                 <div class="formulario__grupo" id="grupo__nationality">
+                    <div class="formulario__grupo-input"> 
+                        <v-text-field class="input" v-model="nationality" label="Nacionalidad" required></v-text-field>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                </div>   
+                 <!--Grupo: Tipo de documento-->
+                <div class="formulario__grupo-input"> 
+                    <v-select :items="items" class="input" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
                 </div>
-                <div> 
-                    <v-text-field v-model="nationality" label="Nacionalidad" required></v-text-field>
+                 <!--Grupo: Numero documento-->
+                 <div class="formulario__grupo" id="grupo__docnumber">
+                    <div class="formulario__grupo-input"> 
+                        <v-text-field class="input" v-model="docnumber" label="Número de documento" required></v-text-field>
+                    </div>
+                    <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
                 </div>
-                <div> 
-                    <v-select :items="items" v-model="doctype" label="Tipo de documento">{{items}}</v-select>
-                </div>
-                <div> 
-                    <v-text-field v-model="docnumber" label="Número de documento" required></v-text-field>
-                </div>
+                 <!--Grupo: Button-->
                 <div> 
                     <v-btn @click="saveData(haveID)"> Agregar </v-btn>
                 </div>
+  
 
         </div>
             <div class="overflow-x-auto relative sm:rounded-lg"> 
