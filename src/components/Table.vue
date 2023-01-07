@@ -6,7 +6,8 @@
             <div class="flex-justify-center items-end-space-x-3"> 
                 <!--Grupo: Nombre-->
                 <div>
-                        <v-text-field v-model="name" label="Nombre"
+      
+                        <v-text-field v-model="name" label="Nombre" 
                         :rules="validateName" ></v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
@@ -30,23 +31,25 @@
                         label="Tipo de documento"
                         return-object
                         single-line
+                        :rules="validateDocument"
                         > {{items}}
                     </v-select>
                    
                   
-                </div><br/>
+                </div>
+           <br/>
                  <!--Grupo: Numero documento-->
                  <div>
 
-                        <v-text-field v-model="docnumber" label="Número de documento" :rules="[validateDocNumber]" ></v-text-field>
+                        <v-text-field v-model="docnumber" label="Número de documento" :rules="validateDocNumber" ></v-text-field>
 
                 </div><br/>
                  <!--Grupo: Button-->
                 <div> 
                     <v-btn @click="saveData(haveID)"> Agregar </v-btn>
                 </div>
+            
   
-
         </div>
             <div class="overflow-x-auto relative sm:rounded-lg"> 
             <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
@@ -95,10 +98,13 @@ export default{
     data() {
         return{
                 items: [
-                { document: 'DNI' },
-                { document: 'Pasaporte' },
-                { document: 'C.E'}
+                { document: 'DNI', regex: /^([0-9]+)$/ , maxLength: 8 },
+                { document: 'Pasaporte', regex: /^([0-9]+)$/, maxLength: 9  },
+                { document: 'C.E', regex: /^([a-zA-Z]+)$/, maxLength: 9 }
                 ],
+           
+
+        valid: true,
         id: "",
         name: "",
         validateName: [
@@ -116,7 +122,19 @@ export default{
         v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
       ],
         doctype: "",
+        validateDocument: [
+        v => (v =='DNI' && v.length <= item.maxLength) || 'Máximo 8 carácteres',
+        v => (v =='Pasaporte' && v.length > 9) || 'Máximo 9 carácteres',
+        v => (v =='C.E' && v.length > 9) || 'Máximo 9 carácteres',
+
+      ],
         docnumber: "",
+        validateDocNumber: [
+        v => !!v || 'Obligatorio',
+        v => (v =='DNI' && this.items.regex.test(v)) || 'Solo numeros permitidos',
+        v => (v =='Pasaporte' && this.items.regex.test(v)) || 'Solo numeros permitidos',
+        v => (v =='C.E' && this.items.regex.test(v)) || 'Solo números y letras permitidas',
+      ],
         haveID:null,
         passengerData:[
           
