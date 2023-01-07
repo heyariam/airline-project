@@ -84,7 +84,11 @@
 export default{
     data(){
         return{
-        items: ['DNI', 'Pasaporte','C.E' ],
+        items: [
+            { id: 1 , item: 'DNI' },
+            { id: 2 , item: 'Pasaporte' },
+            { id: 3 , item: 'C.E' },
+         ],
         id: "",
         name: "",
         lastname: "",
@@ -154,16 +158,18 @@ export default{
         
             },
 
-           /* validateDocNumber(doctype , docnumber) {
-                if (doctype === 'DNI' && 'Pasaporte' && docnumber === /^([0-9]+)$/.test(docnumber)) {
+           validateDocNumber(doctype , docnumber) {
+                if (doctype === 'DNI' && docnumber !== /^([0-9]+)$/.test(docnumber)) {
                     return 'Solo numeros permitidos';
-                } else if (doctype === 'C.E' &&  docnumber === /^([a-zA-Z]+)$/.test(docnumber)) {
+                } else if (doctype === 'C.E' &&  docnumber !== /^([a-zA-Z]+)$/.test(docnumber)) {
                     return 'Solo números y letras permitidas';
+                } else if (doctype === 'Pasaporte' && docnumber !== /^([0-9]+)$/.test(docnumber)) {
+                    return 'Solo numeros permitidos';
                 } else {
                     return docnumber;
     
                 }
-            }*/
+            }
           
         }
     }
