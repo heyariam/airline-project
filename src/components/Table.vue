@@ -7,22 +7,32 @@
                 <!--Grupo: Nombre-->
                 <div>
                         <v-text-field v-model="name" label="Nombre"
-                        :rules="[validateName]" ></v-text-field>
+                        :rules="validateName" ></v-text-field>
                  </div><br/>
                  <!--Grupo: Apellido-->
                  <div>
                             <v-text-field v-model="lastname" label="Apellido"
-                            :rules="[validateLastName]" > </v-text-field>
+                            :rules="validateLastName" > </v-text-field>
                 </div><br/>
                  <!--Grupo: Nacionalidad-->
                  <div>
                         <v-text-field v-model="nationality" label="Nacionalidad"
-                        :rules="[validateNationality]"> </v-text-field>
+                        :rules="validateNationality"> </v-text-field>
                 </div>   <br/>
                  <!--Grupo: Tipo de documento-->
                 <div> 
-                    <v-select :items="items" v-model="doctype" label="Tipo de documento"
-                    >{{items}}</v-select>
+                    <!--<v-select :items="items" v-model="doctype" label="Tipo de documento"
+                    >{{items}}</v-select>-->
+                    <v-select
+                        v-model="doctype"
+                        :items="items"
+                        item-text="document"
+                        label="Tipo de documento"
+                        return-object
+                        single-line
+                        > {{items}}
+                    </v-select>
+                   
                   
                 </div><br/>
                  <!--Grupo: Numero documento-->
@@ -82,17 +92,29 @@
 
 
 export default{
-    data(){
+    data() {
         return{
-        items: [
-            { id: 1 , item: 'DNI' },
-            { id: 2 , item: 'Pasaporte' },
-            { id: 3 , item: 'C.E' },
-         ],
+                items: [
+                { document: 'DNI' },
+                { document: 'Pasaporte' },
+                { document: 'C.E'}
+                ],
         id: "",
         name: "",
+        validateName: [
+        v => !!v || 'Obligatorio',
+        v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
+      ],
         lastname: "",
+        validateLastName: [
+        v => !!v || 'Obligatorio',
+        v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
+      ],
         nationality: "",
+        validateNationality: [
+        v => !!v || 'Obligatorio',
+        v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
+      ],
         doctype: "",
         docnumber: "",
         haveID:null,
@@ -143,7 +165,7 @@ export default{
          this.passengerData.splice(index, 1)
         },
 
-        validateName(name) {
+       /* validateName(name) {
             return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name) : name;
 
                 
@@ -158,7 +180,7 @@ export default{
         
             },
 
-           validateDocNumber(doctype , docnumber) {
+          /* validateDocNumber(doctype , docnumber) {
                 if (doctype === 'DNI' && docnumber !== /^([0-9]+)$/.test(docnumber)) {
                     return 'Solo numeros permitidos';
                 } else if (doctype === 'C.E' &&  docnumber !== /^([a-zA-Z]+)$/.test(docnumber)) {
@@ -170,6 +192,11 @@ export default{
     
                 }
             }
+            validateDocNumber(docnumber) {
+                return 'Solo numeros permitidos' ? docnumber !== /^([0-9]+)$/.test(docnumber) : docnumber;
+               
+    
+            }*/
           
         }
     }
