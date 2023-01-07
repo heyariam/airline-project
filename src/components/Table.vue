@@ -93,7 +93,6 @@
     docnumber: /[A-Za-z0-9]+/i
 */
 
-
 export default{
     data() {
         return{
@@ -102,8 +101,6 @@ export default{
                 { document: 'Pasaporte', regex: /^([0-9]+)$/, maxLength: 9  },
                 { document: 'C.E', regex: /^([a-zA-Z]+)$/, maxLength: 9 }
                 ],
-           
-
         valid: true,
         id: "",
         name: "",
@@ -131,7 +128,7 @@ export default{
         docnumber: "",
         validateDocNumber: [
         v => !!v || 'Obligatorio',
-        v => (v =='DNI' && this.items.regex.test(v)) || 'Solo numeros permitidos',
+        v => (v =='DNI'&& this.items.regex.test(v)) || 'Solo numeros permitidos',
         v => (v =='Pasaporte' && this.items.regex.test(v)) || 'Solo numeros permitidos',
         v => (v =='C.E' && this.items.regex.test(v)) || 'Solo números y letras permitidas',
       ],
