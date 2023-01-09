@@ -4,7 +4,7 @@
                 <!--Título-->
                 <h4 class="font-weight-bold text-center pa-2">Ingresar datos</h4>
                     <!--Grupo Formulario-->
-                <div> 
+                <v-form ref="form"> 
                     <!--Grupo: Nombre-->
                     <div>
                         <v-text-field v-model="name" label="Nombre" 
@@ -52,7 +52,7 @@
                         </v-btn>
                         <v-spacer></v-spacer>
         
-                                <v-btn @click="clear">
+                                <v-btn @click="reset">
                                     Limpiar
                                 </v-btn>
     
@@ -63,7 +63,7 @@
                 
                     </v-card-actions>
                 </div>
-        </div>
+            </v-form>
         </div>
         <div class="usersdata_card">
             <div class="overflow-x-auto relative sm:rounded-lg"> 
@@ -197,14 +197,8 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
-            clear () {
-            this.$v.$reset()
-            this.id = ''
-            this.name = ''
-            this.lastname = ''
-            this.nationality = ''
-            this.select = null
-            this.docnumber = ''
+        reset () {
+        this.$refs.form.reset()
         },
     navigateToPage() {
       this.$router.push({ path: '/inicio'})
