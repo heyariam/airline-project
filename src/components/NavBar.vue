@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
       app
-      color= "#f5c66f"
+      color= "#4285f4"
       flat
       class="px-12"
     >
@@ -37,3 +37,9 @@
     }),
   }
 </script>
+
+
+<style scoped>
+
+
+</style>

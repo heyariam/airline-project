@@ -1,5 +1,6 @@
 <template>
-           <div>
+           <div class="info-container">
+            <div>
             <!--Título-->
             <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
                 <!--Grupo Formulario-->
@@ -80,7 +81,7 @@
         <div> 
             <v-btn>Guardar información</v-btn>
         </div>
-
+    </div>
     </div>
 </template>
 
@@ -273,8 +274,9 @@ export default{
     margin: 0px;
     padding: 0px;
  }
- .maincontainer{
+ .info-container{
     width: 100%;
+    background-color: var(--travel-color-blue-500);
  }
  .cardcontent{
     display: flex;

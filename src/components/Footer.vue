@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#f5c66f">
+  <v-footer color="#4285f4">
     <v-col
       class="text-center"
       cols="12"
@@ -14,3 +14,9 @@
 export default {
 }
 </script>
+
+
+<style scoped>
+
+
+</style>
