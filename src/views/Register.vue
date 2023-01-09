@@ -1,9 +1,5 @@
 <template>
-  <div>
-  
     <FormComp @submit="onSubmit" />
-
-  </div>
 </template>
 
 <script>
