@@ -3,8 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Herowrapper from '../views/Herowrapper.vue';
-import RegisterVue from '@/views/Register.vue';
-import Table from '@/components/Table.vue';
+import Register from '@/views/Register.vue';
 
 Vue.use(VueRouter)
 
@@ -23,11 +22,7 @@ const routes = [
   },
   {
     path: '/registro',
-    component: Table
-  },
-  {
-    path: '/registro',
-    component: Table
+    component: Register
   },
   {
     path: '/notFound(.*)',
