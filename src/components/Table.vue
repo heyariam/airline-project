@@ -208,92 +208,9 @@ export default{
         },
     navigateToPage() {
       this.$router.push({ path: '/inicio'})
-    }
-  },
-
-       /* validateName(name) {
-            return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name) : name;
-
-                
-            },
-            validateLastName(lastname) {
-            return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? lastname !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname) : lastname;
-                
-            },
-
-            validateNationality(nationality) {
-            return 'Ingresa un dato válido (solo letras permitidas)' ? nationality !== /^([a-zA-Z]+)$/.test(nationality) : nationality;
-        
-            },
-
-          /* validateDocNumber(doctype , docnumber) {
-                if (doctype === 'DNI' && docnumber !== /^([0-9]+)$/.test(docnumber)) {
-                    return 'Solo numeros permitidos';
-                } else if (doctype === 'C.E' &&  docnumber !== /^([a-zA-Z]+)$/.test(docnumber)) {
-                    return 'Solo números y letras permitidas';
-                } else if (doctype === 'Pasaporte' && docnumber !== /^([0-9]+)$/.test(docnumber)) {
-                    return 'Solo numeros permitidos';
-                } else {
-                    return docnumber;
-    
-                }
-            }
-            validateDocNumber(docnumber) {
-                return 'Solo numeros permitidos' ? docnumber !== /^([0-9]+)$/.test(docnumber) : docnumber;
-               
-    
-            }*/
-          
-        }
-    
-
-        /*validateLastName(lastname){
-            if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
-            return 'Please enter a valid name (only letters are allowed)';
-        } else if (lastname === '') {
-            return 'Ingresa un dato válido';
-        }
-    }*/
-    
-
-
-       /* validateName(name){
-            if (name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
-            return 'Ingresa un dato válido (solo letras y espacios permitidos)';
-                } else if (name === /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name)){
-                    return this.name;
-                }
     },
-        validateLastName(lastname){
-            if (lastname !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname)){
-            return 'Ingresa un dato válido (solo letras y espacios permitidos)';
-        } else{
-            return " ";
+  }        
         }
-    },
-            validateNationality(nationality){
-                    if (nationality !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(nationality)){
-                    return 'Ingresa un dato válido (solo letras y espacios permitidos)';
-                    } else if (nationality === '') {
-                        return '';
-                    }
-            },
-
-            
-            validateDocNumber(docnumber, doctype) {
-                 if (doctype !== /[A-Za-z0-9]+/i.test(docnumber)) {
-                    return (docnumber = 'Máximo 8 carácteres (solo números permitidos)');
-                } else if (doctype === 'DNI'|| 'Pasaporte' ||'C.E' ){
-                    return this.docnumber;
-                }
-                }*/
-
-
-                    
-
-
-
-
 
 
 </script>
