@@ -1,13 +1,12 @@
 <template>
-           <div class="info_container">
-            <div>
-            <!--Título-->
-            <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
-                <!--Grupo Formulario-->
-            <div class="flex-justify-center items-end-space-x-3"> 
-                <!--Grupo: Nombre-->
-                <div>
-      
+           <div class="info_container spacing-playground pa-6">
+            <div class="inputs_card">
+                <!--Título-->
+                <h4 class="font-weight-bold text-center pa-2">Ingresar datos</h4>
+                    <!--Grupo Formulario-->
+                <div> 
+                    <!--Grupo: Nombre-->
+                    <div>
                         <v-text-field v-model="name" label="Nombre" 
                         :rules="validateName" ></v-text-field>
                  </div><br/>
@@ -46,12 +45,27 @@
 
                 </div><br/>
                  <!--Grupo: Button-->
-                <div> 
-                    <v-btn @click="saveData(haveID)"> Agregar </v-btn>
+                <div>
+                    <v-card-actions>
+                        <v-btn text @click="navigateToPage">
+                            Cancelar
+                        </v-btn>
+                        <v-spacer></v-spacer>
+        
+                                <v-btn @click="clear">
+                                    Limpiar
+                                </v-btn>
+    
+                        <v-btn 
+                        color="primary"
+                        text
+                        @click="saveData(haveID)"> Agregar </v-btn>
+                
+                    </v-card-actions>
                 </div>
-            
-  
         </div>
+        </div>
+        <div class="usersdata_card">
             <div class="overflow-x-auto relative sm:rounded-lg"> 
             <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                 <thead> 
@@ -66,19 +80,22 @@
                             <th class="py-4 px-6">{{data.docnumber}}</th>
                        
                         <td>
-                            <div> 
+                           <div> 
                                 <v-btn @click="getData(data.id)"> Editar </v-btn>
                             </div>
                             <div> 
                                 <v-btn @click="deleteData(data.id)"> Eliminar </v-btn>
                             </div>
+                
                         </td>
                     </tr>
                     </tbody>
             </table>
+         
         </div>
 
         <div> 
+            
             <v-btn>Guardar información</v-btn>
         </div>
     </div>
@@ -180,6 +197,19 @@ export default{
          var index = this.passengerData.findIndex((data) => data.id == id)
          this.passengerData.splice(index, 1)
         },
+            clear () {
+            this.$v.$reset()
+            this.id = ''
+            this.name = ''
+            this.lastname = ''
+            this.nationality = ''
+            this.select = null
+            this.docnumber = ''
+        },
+    navigateToPage() {
+      this.$router.push({ path: '/inicio'})
+    }
+  },
 
        /* validateName(name) {
             return 'Ingresa un dato válido (solo letras y espacios permitidos)' ? name !== /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(name) : name;
@@ -215,8 +245,7 @@ export default{
             }*/
           
         }
-    }
-
+    
 
         /*validateLastName(lastname){
             if (lastname !== (/^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(lastname))){
@@ -276,11 +305,21 @@ export default{
  }
  .info_container{
     width: 100%;
-    background-color: var(--travel-color-blue-100);
- }
- .cardcontent{
+    background-color: var(--travel-color-blue-500);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
  }
+ 
+ .inputs_card{
+    background-color: var(--travel-color-white);
+    width: 80%;
+    border-radius: 2rem;
+    margin: 0.5rem;
+    padding: 2rem;
+ }
+
+h4{
+    font-size:1.50rem;
+}
 </style>
