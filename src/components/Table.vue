@@ -1,5 +1,5 @@
 <template>
-           <div class="info-container">
+           <div class="info_container">
             <div>
             <!--Título-->
             <h4 class="text-2xl font-bold text-center-py-2">Ingresar datos</h4>
@@ -274,9 +274,9 @@ export default{
     margin: 0px;
     padding: 0px;
  }
- .info-container{
+ .info_container{
     width: 100%;
-    background-color: var(--travel-color-blue-500);
+    background-color: var(--travel-color-blue-100);
  }
  .cardcontent{
     display: flex;
