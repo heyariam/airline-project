@@ -1,7 +1,7 @@
 <template>
   <div>
       <NavBar />
-      <Table />
+      <Register />
     <Footer />
   </div>
 </template>
@@ -11,14 +11,14 @@ import { defineComponent } from "vue";
 import NavBar from "../components/NavBar.vue";
 import Footer from "../components/Footer.vue";
 //import Herowrapper from "./Herowrapper.vue";
-import Table from "../components/Table.vue";
+import Register from "../views/Register.vue"
 
 
 export default defineComponent({
   name: "HomeView",
   components: {
     NavBar,
-    Table,
+    Register,
     Footer,  
 }
 
