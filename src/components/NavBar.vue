@@ -6,8 +6,8 @@
       class="px-12"
     >
     <div>
-      <v-icon left class="mr-2"> fa-plane </v-icon>
-      <span>Tekton</span> Airlines 
+      <h5><span>Tekton</span> Airlines </h5>
+      
     </div>
 
       <v-tabs
