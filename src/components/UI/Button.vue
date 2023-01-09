@@ -1,6 +1,6 @@
 
 <template>
-  <button @click="onClick" class="Button">
+  <button class="Button">
     <slot>Button </slot>
   </button>
 </template>
@@ -8,17 +8,14 @@
 <script>
 export default {
   props: {
-    onClick: {
-      type: Function,
-      required: true
-    }
+  
   }
 }
 </script>
 
   <style scoped>
-   .button{
-    background-color: var(--travel-color-blue-500);
+   .Button{
+    background-color: var(--travel-color-salmon-50);
     color: var(--travel-color-white);
     border-radius: 50%;
    }

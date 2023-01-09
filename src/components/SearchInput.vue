@@ -67,8 +67,7 @@
      
           <v-btn
             @click="navigateToPage"
-            rounded
-            color="error">
+            rounded>
             Registrar</v-btn>
           </v-form>
         </v-card-text>

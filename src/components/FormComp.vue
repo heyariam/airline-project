@@ -104,13 +104,7 @@
 
 <script>
 
-/*REGEX
-    name: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
-    lastname: /^([ a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ]+)$/
-    nationality: [A-Za-z]
-    docnumber: /[A-Za-z0-9]+/i
-*/
-
+import { Button } from "@/components/UI/Button.vue";
 export default{
     name: 'FormComp',
      components: {
@@ -227,7 +221,7 @@ export default{
  
  .inputs_card{
     background-color: var(--travel-color-white);
-    width: 80%;
+    width: 60%;
     border-radius: 2rem;
     margin: 0.5rem;
     padding: 2rem;

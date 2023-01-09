@@ -6,7 +6,7 @@
       class="px-12"
     >
     <div>
-      <h5><span>Tekton</span> Airlines </h5>
+      <h2><span>Tekton</span> Airlines </h2>
       
     </div>
 
