@@ -1,5 +1,5 @@
 <template>
-  <v-app flat max-height="65">
+  <v-app>
       <v-main>
         <Header />
         <router-view/>
@@ -24,6 +24,10 @@ export default {
   })
 };
 
-
-
 </script>
+
+<style scoped>
+main{
+  background-color: var(--travel-color-blue-500);
+}
+</style>
