@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <v-app-bar
       app
       color= "#4285f4"
@@ -24,6 +24,18 @@
   
     </v-app-bar>
 
+</template>-->
+
+<template>
+  <v-container>
+    <v-toolba-title>Tekton Airlines</v-toolba-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items>
+      <v-btn text><router-link to="/">Home</router-link></v-btn>
+      <v-btn text><router-link to="/about">About</router-link></v-btn>
+      <v-btn text><router-link to="/contact">Contact</router-link></v-btn>
+    </v-toolbar-items>
+  </v-container>
 </template>
 
 <script>
