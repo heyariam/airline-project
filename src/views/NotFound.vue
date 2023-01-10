@@ -1,29 +1,23 @@
 <template>
-  <div>
-    <h1>Not Found!</h1>
-    <p>
-      <router-link :to="{path: '/inicio' }"> volver </router-link>
-    </p>
-  </div>
+  <v-content>
+    <v-container>
+      <div class="block text-center notFound">
+        <h2>¡Página no encontrada! </h2>
+        <i class="fas fa-exclamation-triangle red--text"></i>
+        <p>Por favor ve al inicio </p>
+      </div>
+    </v-container>
+  </v-content>
 </template>
 
 <script>
+export default {
+  name: "NotFound",
 
-  export default {
-    name: 'NotFound'
+  data() {
+    return {
+      items: []
+    };
   }
-
+};
 </script>
-
-<style scoped>
-
-  center {
-    margin: 15vw;
-  }
-
-  h1 {
-    color: var(--border);
-    font-size: 2em;
-  }
-
-</style>

@@ -1,22 +1,29 @@
 <template>
-  <v-app>
-    <v-main>
-      <router-view/>
-    </v-main>
+  <v-app flat max-height="65">
+    <Header />
+      <v-main>
+        <router-view/>
+      </v-main>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Button from "./components/UI/Button.vue";
-import Homeview from "./views/HomeView.vue";
+import Header from "./components/common/Header.vue";
+import Footer from "./components/common/Footer.vue";
 
 export default {
   name: 'App',
   components: {
-    Homeview,
-    'v-btn': Button
-  }
-}
+    Header,
+    Footer,
+  },
+
+  data: () => ({
+    //
+  })
+};
+
 
 
 </script>
