@@ -1,5 +1,5 @@
 <template>
-    <FormComp @submit="onSubmit" />
+    <FormComp />
 </template>
 
 <script>
@@ -8,9 +8,7 @@ import FormComp from '../components/FormComp.vue'
 export default {
   name: 'Registration',
   components: {
-  
-    FormComp,
-
+    FormComp
   }
 }
 </script>
