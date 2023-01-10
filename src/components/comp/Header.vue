@@ -5,8 +5,8 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
       <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-      <v-btn text><router-link to="/about">Busca tu vuelo</router-link></v-btn>
-      <v-btn text><router-link to="/contact">Contact</router-link></v-btn>
+      <v-btn text><router-link to="/buscar">Busca tu vuelo</router-link></v-btn>
+      <v-btn text><router-link to="/*">Contacto</router-link></v-btn>
     </v-toolbar-items>
     <div class="hidden-sm-and-up">
         <v-menu offset-y>
