@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-main{
+app{
   background-color: var(--travel-color-blue-500);
 }
 </style>
