@@ -1,16 +1,16 @@
 <template>
   <v-app flat max-height="65">
-    <Header />
       <v-main>
+        <Header />
         <router-view/>
+        <Footer />
       </v-main>
-    <Footer />
   </v-app>
 </template>
 
 <script>
-import Header from "./components/common/Header.vue";
-import Footer from "./components/common/Footer.vue";
+import Header from "./components/comp/Header.vue";
+import Footer from "./components/comp/Footer.vue";
 
 export default {
   name: 'App',

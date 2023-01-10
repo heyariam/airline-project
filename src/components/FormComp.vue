@@ -104,7 +104,6 @@
 
 <script>
 
-import { Button } from "@/components/UI/Button.vue";
 export default{
     name: 'FormComp',
      components: {
