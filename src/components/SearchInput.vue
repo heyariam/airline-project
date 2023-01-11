@@ -122,6 +122,7 @@ export default {
     align-content:space-around;
     gap: 2rem;
     margin: 2rem;
+   
   }
 
   .glassmorph{

@@ -31,7 +31,7 @@ export default{
   padding: 0px;
  }
   .main-hero{
-    background-color: #f5c66f;
+    background-color: var(--travel-color-blue-500);
   }
 
 

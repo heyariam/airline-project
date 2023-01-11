@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-toolbar flat class="mainHeader">
-    <v-toolba-title>Tekton Airlines</v-toolba-title>
+    <v-toolbar flat class="mainHeader" color="#4285f4">
+    <v-toolbar-title>Tekton Airlines</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
       <v-btn text><router-link to="/">Inicio</router-link></v-btn>
