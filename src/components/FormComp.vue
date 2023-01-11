@@ -1,6 +1,7 @@
 <template>
            <div class="info_container spacing-playground pa-6">
-            <div class="inputs_card">
+
+            <v-card class="inputs_card">
                 <!--Título-->
                 <h4 class="font-weight-bold text-center pa-2">Ingresar datos</h4>
                     <!--Grupo Formulario-->
@@ -64,7 +65,7 @@
                     </v-card-actions>
                 </div>
             </v-form>
-        </div>
+       
         <div class="usersdata_card">
             <div class="overflow-x-auto relative sm:rounded-lg"> 
             <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
@@ -96,10 +97,12 @@
 
         <div> 
             
-            <v-btn>Guardar información</v-btn>
+            <v-btn class="savebutton">Guardar información</v-btn>
         </div>
     </div>
-    </div>
+    </v-card>
+</div>
+
 </template>
 
 <script>
@@ -217,16 +220,52 @@ export default{
     flex-direction: column;
     align-items: center;
  }
- 
+
+
  .inputs_card{
     background-color: var(--travel-color-white);
     width: 60%;
     border-radius: 2rem;
     margin: 0.5rem;
     padding: 2rem;
+    border-radius: 30px;
  }
+
+
 
 h4{
     font-size:1.50rem;
+}
+
+.savebutton{
+display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ font-family: inherit;
+ font-size: 13px;
+ font-weight: 500;
+ text-transform: uppercase;
+ letter-spacing: 0.4px;
+ color: #7e97b8;
+ background-color: #e0e8ef;
+ border-style: solid;
+ border-width: 2px 2px 2px 2px;
+ border-color: rgba(255, 255, 255, 0.333);
+ border-radius: 40px 40px 40px 40px;
+ padding: 16px 24px 16px 28px;
+ transform: translate(0px, 0px) rotate(0deg);
+ transition: 0.2s;
+ box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+}
+
+.savebutton:hover {
+ color: #516d91;
+ background-color: #E5EDF5;
+ box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+.savebutton:active {
+ box-shadow: none;
 }
 </style>

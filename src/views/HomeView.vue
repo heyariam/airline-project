@@ -1,25 +1,19 @@
 <template>
   <div>
-
-      <Register />
-
+    <SearchWrapper/>
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import Register from "../views/Register.vue"
+import SearchWrapper from "./SearchWrapper.vue";
 
 
 
 export default defineComponent({
-  name: "HomeView",
-  components: {
-    Register,
-
-
-}
-
+    name: "HomeView",
+    components: SearchWrapper,
+  
 });
 </script>
 

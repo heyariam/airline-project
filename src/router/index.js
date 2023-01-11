@@ -1,10 +1,9 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Herowrapper from '../views/Herowrapper.vue';
 import Register from '@/views/Register.vue';
 import NotFound from '@/views/NotFound.vue';
+import SearchWrapper from '@/views/SearchWrapper.vue';
  
 
 Vue.use(VueRouter)
@@ -12,15 +11,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: HomeView
+    component: SearchWrapper
   },
   {
     path: '/inicio',
-    component: HomeView
-  },
-  {
-    path: '/buscar',
-    component: Herowrapper
+    component: SearchWrapper
   },
   {
     path: '/registro',

@@ -5,7 +5,6 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
       <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-      <v-btn text><router-link to="/buscar">Busca tu vuelo</router-link></v-btn>
       <v-btn text><router-link to="/*">Contacto</router-link></v-btn>
     </v-toolbar-items>
     <div class="hidden-sm-and-up">
@@ -16,9 +15,6 @@
           <v-list class="responsiveMenu">
             <v-list-item>
               <v-list-item-title><router-link to="/">Inicio</router-link></v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title><router-link to="/about">Busca tu vuelo</router-link></v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title><router-link to="/contact">Contacto</router-link></v-list-item-title>
@@ -35,7 +31,6 @@
     data: () => ({
       links: [
         'Inicio',
-        'Busca tu vuelo',
         'Contáctanos',
       ],
     }),
