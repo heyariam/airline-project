@@ -8,16 +8,15 @@
 
 <script>
 import { defineComponent } from "vue";
-
-//import Herowrapper from "./Herowrapper.vue";
 import Register from "../views/Register.vue"
+
 
 
 export default defineComponent({
   name: "HomeView",
   components: {
-
     Register,
+
 
 }
 

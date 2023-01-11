@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue'
 import Herowrapper from '../views/Herowrapper.vue';
 import Register from '@/views/Register.vue';
 import NotFound from '@/views/NotFound.vue';
+ 
 
 Vue.use(VueRouter)
 
