@@ -21,8 +21,6 @@
                 </div> <br />
                 <!--Grupo: Tipo de documento-->
                 <div>
-                    <!--<v-select :items="items" v-model="doctype" label="Tipo de documento"
-                    >{{items}}</v-select>-->
                     <v-select v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
                         return-object single-line :rules="validateDocument"> {{ items }}
                     </v-select>
@@ -30,10 +28,8 @@
                 <br />
                 <!--Grupo: Numero documento-->
                 <div>
-
                     <v-text-field v-model="docnumber" label="Número de documento"
                         :rules="validateDocNumber"></v-text-field>
-
                 </div><br />
                 <!--Grupo: Button-->
                 <div>
@@ -45,9 +41,7 @@
                         <v-btn class="ma-2" outlined color="indigo" @click="reset">
                             Limpiar
                         </v-btn>
-
                         <v-btn elevation="2" color="success" @click="saveData(haveID)"> Agregar </v-btn>
-
                     </v-card-actions>
                 </div>
             </v-form>
@@ -95,18 +89,12 @@
                                     </tbody>
                                 </table><br>
                                 <div>
-
                                     <v-btn color="success" elevation="2">Guardar información</v-btn>
                                 </div>
-
                             </v-card>
                         </div>
                     </v-expand-transition>
-
-
                 </div>
-
-
             </div>
         </v-card>
     </div>
