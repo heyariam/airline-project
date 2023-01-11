@@ -1,5 +1,5 @@
 <template>
-    <div class="info_container spacing-playground pa-6">
+    <div class="info_container spacing-playground pa-12">
 
         <v-card class="inputs_card">
             <!--Título-->
@@ -47,10 +47,10 @@
             </v-form>
 
             <div class="usersdata_card">
-                <div class="overflow-x-auto relative sm:rounded-lg">
+                <div class="overflow-x-auto">
                     <v-card-actions>
-                        <v-btn color="orange lighten-2" text>
-                            Ver más
+                        <v-btn color=#202124 text>
+                            Ver datos
                         </v-btn>
                         <v-spacer></v-spacer>
                         <v-btn icon @click="show = !show">
@@ -61,7 +61,7 @@
                         <div v-show="show">
                             <v-divider></v-divider>
                             <v-card>
-                                <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
+                                <table class="w-full text-sm text-center text-gray-500">
                                     <thead>
                                         <h4>Datos pasajeros</h4>
                                     </thead>
@@ -225,7 +225,6 @@ export default {
     border-radius: 2rem;
     margin: 0.5rem;
     padding: 2rem;
-    border-radius: 30px;
 }
 
 h4 {
