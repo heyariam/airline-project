@@ -48,18 +48,19 @@
                  <!--Grupo: Button-->
                 <div>
                     <v-card-actions>
-                        <v-btn text @click="navigateToPage">
+                        <v-btn class="button2" @click="navigateToPage">
                             Cancelar
                         </v-btn>
                         <v-spacer></v-spacer>
         
-                                <v-btn class="button2"
+                                <v-btn 
+                                elevation="2"
                                 @click="reset">
                                     Limpiar
                                 </v-btn>
     
                         <v-btn 
-                        class="button_styled"
+                        elevation="2"
                         @click="saveData(haveID)"> Agregar </v-btn>
                 
                     </v-card-actions>
@@ -97,7 +98,9 @@
 
         <div> 
             
-            <v-btn class="button_styled">Guardar información</v-btn>
+            <v-btn 
+            elevation="2"
+            >Guardar información</v-btn>
         </div>
     </div>
     </v-card>
@@ -221,7 +224,6 @@ export default{
     align-items: center;
  }
 
-
  .inputs_card{
     background-color: var(--travel-color-white);
     width: 60%;
@@ -230,112 +232,9 @@ export default{
     padding: 2rem;
     border-radius: 30px;
  }
-
-
-
 h4{
+   
     font-size:1.50rem;
-}
-
-.button_styled{
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 10px;
- font-family: inherit;
- font-size: 13px;
- font-weight: 500;
- text-transform: uppercase;
- letter-spacing: 0.4px;
- color: #7e97b8;
- background-color: #e0e8ef;
- border-style: solid;
- border-width: 2px 2px 2px 2px;
- border-color: rgba(255, 255, 255, 0.333);
- border-radius: 40px 40px 40px 40px;
- padding: 16px 24px 16px 28px;
- transform: translate(0px, 0px) rotate(0deg);
- transition: 0.2s;
- box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
-}
-
-.button_styled:hover {
- color: #516d91;
- background-color: #E5EDF5;
- box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-}
-
-.button_styled:active {
- box-shadow: none;
-}
-
-.button2 {
-  display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
-}
-
-.button2:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5,
-             inset -4px -4px 12px #ffffff;
-}
-
-.button2:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-  top: 100%;
-  width: 140%;
-  height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.button2:after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-  top: 180%;
-  width: 160%;
-  height: 190%;
-  background-color: #009087;
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.button2:hover {
-  color: #ffffff;
-  border: 1px solid #009087;
-}
-
-.button2:hover:before {
-  top: -35%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.button2:hover:after {
-  top: -45%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 </style>
