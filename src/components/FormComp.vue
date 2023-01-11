@@ -26,8 +26,6 @@
                     <v-select v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
                         return-object single-line :rules="validateDocument"> {{ items }}
                     </v-select>
-
-
                 </div>
                 <br />
                 <!--Grupo: Numero documento-->
@@ -58,20 +56,16 @@
                 <div class="overflow-x-auto relative sm:rounded-lg">
                     <v-card-actions>
                         <v-btn color="orange lighten-2" text>
-                            Explore
+                            Ver más
                         </v-btn>
-
                         <v-spacer></v-spacer>
-
                         <v-btn icon @click="show = !show">
                             <v-icon>{{ show? 'mdi-chevron-up': 'mdi-chevron-down' }}</v-icon>
                         </v-btn>
                     </v-card-actions>
-
                     <v-expand-transition>
                         <div v-show="show">
                             <v-divider></v-divider>
-
                             <v-card>
                                 <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                                     <thead>
