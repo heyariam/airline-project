@@ -61,6 +61,7 @@
     
                         <v-btn 
                         elevation="2"
+                        color="#FA8072"
                         @click="saveData(haveID)"> Agregar </v-btn>
                 
                     </v-card-actions>
