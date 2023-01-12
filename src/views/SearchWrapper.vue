@@ -1,12 +1,11 @@
 <template>
-    <div id="app" class="main-hero" :height="height">
-      <div class="container-wrap">
-        <v-row>
-                <SearchInput/>
-      
-        </v-row>
-      </div>
-    </div>
+  <v-container >
+    <v-row>
+    <v-col>
+             <SearchInput/>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -17,18 +16,8 @@ export default{
   components: {
     SearchInput
   },
-  computed: {
-      height () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 220
-          case 'sm': return 400
-          case 'md': return 500
-          case 'lg': return 600
-          case 'xl': return 800
-        }
-      },
 }
-}
+
 </script>
 
 <style>
@@ -36,7 +25,6 @@ export default{
   margin: 0px;
   padding: 0px;
  }
-
 
 
 </style>

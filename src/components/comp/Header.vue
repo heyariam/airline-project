@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-app-bar app color="#4285f4" dark flat class="px-8">
     <v-toolbar flat class="mainHeader" color="#4285f4">
     <v-toolbar-title>Tekton Airlines</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -23,16 +23,13 @@
         </v-menu>
       </div>
     </v-toolbar>
-  </v-container>
+  </v-app-bar>
 </template>
 
 <script>
   export default {
     data: () => ({
-      links: [
-        'Inicio',
-        'Contáctanos',
-      ],
+      
     }),
   }
 </script>

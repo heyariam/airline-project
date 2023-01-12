@@ -1,7 +1,7 @@
 <template>
-  <div >
-    <SearchWrapper/>
-  </div>
+ <v-app id="home" :style="{background: $vuetify.theme.themes.dark.background}">
+
+ </v-app>
 </template>
 
 <script>

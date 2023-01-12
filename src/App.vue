@@ -2,9 +2,7 @@
   <v-app>
     <v-main>
       <Header />
-      <div id="app" :height="height">
         <router-view />
-      </div>
       <Footer />
     </v-main>
   </v-app>
@@ -24,30 +22,7 @@ export default {
   data: () => ({
     //
   }),
-  computed: {
-      height () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 220
-          case 'sm': return 400
-          case 'md': return 500
-          case 'lg': return 600
-          case 'xl': return 800
-        }
-      },
-}
-}
+  
+      }
 
 </script>
-
-<style scoped>
-main {
-  background-color: var(--travel-color-blue-500);
-}
-
-#app {
-  background-image: url("./assets/tripbackground.jpg");
-  background-size: 100%;
-  background-position: bottom;
-  transition: 0.4s;
-}
-</style>
