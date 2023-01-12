@@ -1,5 +1,5 @@
 <template>
-  <v-footer app bottom fixed style="width: 100%;" padless color="#4285f4">
+  <v-footer padless color="#4285f4">
     <v-col
       class="text-center"
       cols="12"
@@ -17,6 +17,5 @@ export default {
 
 
 <style scoped>
-
 
 </style>

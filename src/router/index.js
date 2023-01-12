@@ -3,7 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Register from '@/views/Register.vue';
 import NotFound from '@/views/NotFound.vue';
-import SearchWrapper from '@/views/SearchWrapper.vue';
+import HomeView from '@/views/HomeView.vue';
  
 
 Vue.use(VueRouter)
@@ -11,11 +11,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: SearchWrapper
+    component: HomeView
   },
   {
     path: '/inicio',
-    component: SearchWrapper
+    component: HomeView
   },
   {
     path: '/registro',
