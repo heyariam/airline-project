@@ -4,12 +4,12 @@
       <v-col class="glassmorph" cols="12" lg="10" md="10" sm="6">
         <v-card-title class="card-title">Aquí comienza tu aventura</v-card-title>
         <div class="searchbox">
-            <div>
-              <v-select :items="items" label="Desde">{{ items }}</v-select>
-            </div>
-            <div> 
-              <v-select :items="items" label="Hacia"></v-select>
-            </div>
+          <div>
+            <v-select :items="items" label="Desde">{{ items }}</v-select>
+          </div>
+          <div>
+            <v-select :items="items" label="Hacia"></v-select>
+          </div>
           <div>
             <v-menu v-model="fromDateMenu" :close-on-content-click="false" :nudge-right="40" lazy
               transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">

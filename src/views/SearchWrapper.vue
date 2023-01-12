@@ -1,10 +1,10 @@
 <template>
-  <v-container >
+  <v-container>
     <v-row>
-    <v-col>
-      <div>
-             <SearchInput/>
-            </div>
+      <v-col>
+        <div>
+          <SearchInput />
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -14,7 +14,7 @@
 import "@fortawesome/vue-fontawesome";
 import SearchInput from "../components/SearchInput.vue";
 
-export default{
+export default {
   components: {
     SearchInput
   },
@@ -23,10 +23,8 @@ export default{
 </script>
 
 <style>
- *{
+* {
   margin: 0px;
   padding: 0px;
- }
-
-
+}
 </style>
