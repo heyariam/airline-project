@@ -13,8 +13,7 @@
        >
          <v-col cols="12" sm="4">
            <div class="mx-auto">
-               <p>hello</p>
-               <p>hahaha</p>
+              <SearchInput />
            </div>
          </v-col>
          <v-col cols="12" >
@@ -64,12 +63,13 @@
 import { defineComponent } from "vue";
 import Header from "../components/comp/Header.vue";
 import Footer from "../components/comp/Footer.vue";
-
+import SearchInput from "@/components/SearchInput.vue";
 
 export default defineComponent({
     name: "HomeView",
     components: {
       Header,
+      SearchInput,
       Footer
     }
 });
