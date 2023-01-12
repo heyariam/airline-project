@@ -1,10 +1,12 @@
 <template>
   <v-app>
-      <v-main>
-        <Header />
-        <router-view/>
-        <Footer />
-      </v-main>
+    <v-main>
+      <Header />
+      <div id="app">
+        <router-view />
+      </div>
+      <Footer />
+    </v-main>
   </v-app>
 </template>
 
@@ -27,7 +29,14 @@ export default {
 </script>
 
 <style scoped>
-main{
+main {
   background-color: var(--travel-color-blue-500);
+}
+
+#app {
+  background-image: url("./assets/tripbackground.jpg");
+  background-size: 100%;
+  background-position: bottom;
+  transition: 0.4s;
 }
 </style>

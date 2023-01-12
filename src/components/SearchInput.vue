@@ -1,6 +1,6 @@
 <template>
-  <v-row align="center" justify="center" style="height:100%" dense>
-    <v-col class="glassmorph d-flex flex-column justify-center align-center" cols="12" lg="10" md="10">
+  <v-row align="center" justify="center" style="height:100%" dense >
+    <v-col class="glassmorph d-flex flex-column justify-center align-center" cols="12" lg="10" md="10" sm="6" xs="2">
         <v-card-title class="card-title">Aquí comienza tu aventura</v-card-title>
         <v-card-text>
           <v-form class="searchbox">

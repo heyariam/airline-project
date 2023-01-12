@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <SearchWrapper/>
   </div>
 </template>
@@ -23,5 +23,7 @@ export default defineComponent({
   margin: 0px;
   padding: 0px;
  }
+
+
 
 </style>

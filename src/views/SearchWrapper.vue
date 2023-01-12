@@ -1,14 +1,9 @@
 <template>
-    <div class="main-hero" max-height="100%" max-width="100%">
+    <div id="app" class="main-hero" :height="height">
       <div class="container-wrap">
         <v-row>
-          <v-col cols="12">
-            <v-card class="mx-auto rounded-xl" flat>
-              <v-img src="../assets/tripbackground.jpg" max-height="100%" max-width="100%" contain>
                 <SearchInput/>
-              </v-img>
-            </v-card>
-          </v-col>
+      
         </v-row>
       </div>
     </div>
@@ -21,7 +16,18 @@ import SearchInput from "../components/SearchInput.vue";
 export default{
   components: {
     SearchInput
-  }
+  },
+  computed: {
+      height () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 220
+          case 'sm': return 400
+          case 'md': return 500
+          case 'lg': return 600
+          case 'xl': return 800
+        }
+      },
+}
 }
 </script>
 
@@ -30,9 +36,7 @@ export default{
   margin: 0px;
   padding: 0px;
  }
-  .main-hero{
-    background-color: var(--travel-color-blue-500);
-  }
+
 
 
 </style>
