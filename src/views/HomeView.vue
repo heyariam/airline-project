@@ -2,9 +2,9 @@
   <v-app>
     <v-parallax src="../assets/sky-back.jpg" class="background">
       <v-container fluid class="section">
-        <v-content>
+
           <SearchWrapper />
-        </v-content>
+
       </v-container>
     </v-parallax>
   </v-app>
