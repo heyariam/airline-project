@@ -23,6 +23,7 @@
                 <div>
                     <v-select 
                     v-model="doctype" 
+                    :items="items"
                     item-text="document"
                     label="Tipo de documento"
                     return-object single-line 
@@ -117,9 +118,9 @@ export default {
         show: false,
             select: " ",
             items: [
-                { document: 'DNI', regex: /^([0-9]+)$/, maxLength: 8 },
-                { document: 'Pasaporte', regex: /^([0-9]+)$/, maxLength: 9 },
-                { document: 'C.E', regex: /^([a-zA-Z]+)$/, maxLength: 9 }
+                { document: 'DNI', regex: , maxLength: 8 },
+                { document: 'Pasaporte', regex: , maxLength: 9 },
+                { document: 'C.E', regex: , maxLength: 9 }
             ],
             valid: true,
             id: "",
@@ -139,17 +140,13 @@ export default {
                 v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
             ],
             doctype: "",
-            validateDocument: [
-                v => (v == 'DNI' && v.length <= item.maxLength) || 'Máximo 8 carácteres',
-                v => (v == 'Pasaporte' && v.length > 9) || 'Máximo 9 carácteres',
-                v => (v == 'C.E' && v.length > 9) || 'Máximo 9 carácteres',
-            ],
+
             docnumber: "",
             validateDocNumber: [
                 v => !!v || 'Obligatorio',
-                v => (v == 'DNI' && this.items.regex.test(v)) || 'Solo numeros permitidos',
-                v => (v == 'Pasaporte' && this.items.regex.test(v)) || 'Solo numeros permitidos',
-                v => (v == 'C.E' && this.items.regex.test(v)) || 'Solo números y letras permitidas',
+                v => (v == 'DNI' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
+                v => (v == 'Pasaporte' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
+                v => (v == 'C.E' && /^([a-zA-Z]+)$/.test(v)) || 'Solo números y letras permitidas',
             ],
             haveID: null,
             passengerData: [
