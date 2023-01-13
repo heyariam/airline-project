@@ -22,8 +22,7 @@
                 <!--Grupo: Tipo de documento-->
                 <div>
                     <v-select  v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
-                        return-object single-line :rules="validateDocument"> {{ items.value}}
-                    </v-select>
+                        return-object single-line :rules="validateDocument"> {{ items.value }}</v-select>
                 </div>
                 <br />
                 <!--Grupo: Numero documento-->
@@ -110,9 +109,8 @@ export default {
     components: {
         DialogCard
     },
-    data() {
-        return {
-            show: false,
+    data: () =>({
+        show: false,
             items: [
                 { document: 'DNI', regex: /^([0-9]+)$/, maxLength: 8 },
                 { document: 'Pasaporte', regex: /^([0-9]+)$/, maxLength: 9 },
@@ -152,10 +150,8 @@ export default {
             haveID: null,
             passengerData: [
 
-            ]
-
-        }
-    },
+            ],
+    }),
     methods: {
         getData(id) {
             this.haveID = true
@@ -202,11 +198,6 @@ export default {
         navigateToPage() {
             this.$router.push({ path: '/inicio' })
         },
-    }, 
-    computed: {
-        documents() {
-        return this.items.map(item => item.document)
-        }
 }
 }
 

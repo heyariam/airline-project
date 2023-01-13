@@ -21,9 +21,7 @@
                     </v-menu>
                   </div>-->
                   <!--Fecha de partida-->
-                
-          
-                    
+     
                     <div>
                       <v-btn @click="navigateToPage" rounded>
                         Registrar</v-btn>
