@@ -26,8 +26,7 @@
                     :items="items"
                     item-text="document"
                     label="Tipo de documento"
-                    return-object single-line 
-                    :rules="validateDocument"></v-select>
+                    return-object single-line ></v-select>
                 </div>
                 <br />
                 <!--Grupo: Numero documento-->
@@ -136,11 +135,10 @@ export default {
                 v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
             ],
             doctype: "",
-
             docnumber: "",
             validateDocNumber: [
                 v => !!v || 'Obligatorio',
-                v => (v == 'DNI' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
+                v => (v == 'DNI' &&  /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
                 v => (v == 'Pasaporte' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
                 v => (v == 'C.E' && /^([a-zA-Z]+)$/.test(v)) || 'Solo números y letras permitidas',
             ],
