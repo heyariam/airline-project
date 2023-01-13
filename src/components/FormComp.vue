@@ -21,14 +21,20 @@
                 </div> <br />
                 <!--Grupo: Tipo de documento-->
                 <div>
-                    <v-select  v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
-                        return-object single-line :rules="validateDocument"> {{ items.value }}</v-select>
+                    <v-select 
+                    v-model="doctype" 
+                    :items="items"
+                    item-text="document"
+                    :hint="`${items.document}`"
+                    label="Tipo de documento"
+                    return-object single-line 
+                    :rules="validateDocument"></v-select>
                 </div>
                 <br />
                 <!--Grupo: Numero documento-->
                 <div>
                     <v-text-field v-model="docnumber" label="Número de documento"
-                        :rules="validateDocNumber"></v-text-field>
+                        :rules="validateDocNumber" :counter="9"></v-text-field>
                 </div><br />
                 <!--Grupo: Button-->
                 <div>
@@ -111,6 +117,7 @@ export default {
     },
     data: () =>({
         show: false,
+            select: " ",
             items: [
                 { document: 'DNI', regex: /^([0-9]+)$/, maxLength: 8 },
                 { document: 'Pasaporte', regex: /^([0-9]+)$/, maxLength: 9 },
