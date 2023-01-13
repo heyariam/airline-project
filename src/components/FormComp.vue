@@ -23,9 +23,7 @@
                 <div>
                     <v-select 
                     v-model="doctype" 
-                    :items="items"
                     item-text="document"
-                    :hint="`${items.document}`"
                     label="Tipo de documento"
                     return-object single-line 
                     :rules="validateDocument"></v-select>
@@ -142,7 +140,6 @@ export default {
             ],
             doctype: "",
             validateDocument: [
-                v => v == documents(),
                 v => (v == 'DNI' && v.length <= item.maxLength) || 'Máximo 8 carácteres',
                 v => (v == 'Pasaporte' && v.length > 9) || 'Máximo 9 carácteres',
                 v => (v == 'C.E' && v.length > 9) || 'Máximo 9 carácteres',
