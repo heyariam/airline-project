@@ -21,8 +21,8 @@
                 </div> <br />
                 <!--Grupo: Tipo de documento-->
                 <div>
-                    <v-select v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
-                        return-object single-line :rules="validateDocument"> {{ items }}
+                    <v-select  v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
+                        return-object single-line :rules="validateDocument"> {{ items.value}}
                     </v-select>
                 </div>
                 <br />
@@ -89,7 +89,7 @@
                                     </tbody>
                                 </table><br>
                                 <div>
-                                    <v-btn color="success" elevation="2">Guardar información</v-btn>
+                                    <DialogCard/>
                                 </div>
                             </v-card>
                         </div>
@@ -103,10 +103,12 @@
 </template>
 
 <script>
+import DialogCard from "../components/Dialog.vue"
 
 export default {
     name: 'FormComp',
     components: {
+        DialogCard
     },
     data() {
         return {
@@ -135,10 +137,10 @@ export default {
             ],
             doctype: "",
             validateDocument: [
+                v => v == documents(),
                 v => (v == 'DNI' && v.length <= item.maxLength) || 'Máximo 8 carácteres',
                 v => (v == 'Pasaporte' && v.length > 9) || 'Máximo 9 carácteres',
                 v => (v == 'C.E' && v.length > 9) || 'Máximo 9 carácteres',
-
             ],
             docnumber: "",
             validateDocNumber: [
@@ -200,7 +202,12 @@ export default {
         navigateToPage() {
             this.$router.push({ path: '/inicio' })
         },
-    }
+    }, 
+    computed: {
+        documents() {
+        return this.items.map(item => item.document)
+        }
+}
 }
 
 
