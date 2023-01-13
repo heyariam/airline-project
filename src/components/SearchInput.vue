@@ -5,10 +5,10 @@
         <v-card-title class="card-title">Aquí comienza tu aventura</v-card-title>
         <v-form class="searchbox">
                   <div>
-                    <v-select :items="item" label="Desde">{{ items }}</v-select>
+                    <v-select :items="items" label="Desde"></v-select>
                   </div>
                   <div>
-                    <v-select :items="item" label="Hacia">{{ items }}</v-select>
+                    <v-select :items="items" label="Hacia"></v-select>
                   </div>
                   <!--<div>
                     <v-menu v-model="fromDateMenu" :close-on-content-click="false" :nudge-right="40" lazy
@@ -37,39 +37,19 @@
 
 <script>
 
-export default {
-  data: () => (
-    {
-      items: ["Lima", "Arequipa", "Cajamarca", "Cusco", "Trujillo", "Piura", "Tacna", "Tarapoto", "Juliaca"]
-    },
-    {
-      fromDateMenu: false,
-      fromDateVal: null,
-      minDate: "2020-01-05",
-      maxDate: "2019-08-30"
-    },
-    {
-      toDateMenu: false,
-      toDateVal: null,
-      minDate: "2020-01-05",
-      maxDate: "2019-08-30"
-    }
-  ),
-
-  computed: {
-    fromDateDisp() {
-      return this.fromDateVal;
-    },
-    toDateDisp() {
-      return this.toDateVal;
-    },
-  },
+export default{
+  data: () => ({
+    items: ["Lima", "Arequipa", "Cajamarca", "Cusco", "Trujillo", "Piura", "Tacna", "Tarapoto", "Juliaca"],
+    }),
   methods: {
     navigateToPage() {
       this.$router.push({ path: '/registro' })
     }
   }
 }
+  
+  
+
 </script>
 
 
@@ -96,6 +76,5 @@ export default {
 
 .v-card-title {
   margin-top: 1rem;
-
 }
 </style>
