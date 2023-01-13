@@ -1,4 +1,5 @@
 <template>
+
     <div class="info_container spacing-playground pa-12">
 
         <v-card class="inputs_card">
@@ -97,6 +98,7 @@
                 </div>
             </div>
         </v-card>
+  
     </div>
 
 </template>
@@ -212,8 +214,7 @@ export default {
 }
 
 .info_container {
-    width: 100%;
-    background-color: var(--travel-color-blue-500);
+
     display: flex;
     flex-direction: column;
     align-items: center;

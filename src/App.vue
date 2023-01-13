@@ -2,8 +2,8 @@
   <v-app>
     <v-main>
       <Header />
-        <router-view />
-        <Footer />
+      <router-view />
+      <Footer />
     </v-main>
   </v-app>
 
@@ -23,8 +23,8 @@ export default {
   data: () => ({
     //
   }),
-  
-      }
+
+}
 
 </script>
 

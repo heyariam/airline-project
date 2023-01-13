@@ -1,13 +1,5 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <div>
-          <SearchInput />
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+      <SearchInput />
 </template>
 
 <script>
