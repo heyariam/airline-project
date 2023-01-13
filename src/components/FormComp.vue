@@ -1,7 +1,6 @@
 <template>
 
     <div class="info_container spacing-playground pa-12">
-
         <v-card class="inputs_card">
             <!--Título-->
             <h4 class="font-weight-bold text-center pa-2">Ingresar datos</h4>
@@ -214,7 +213,7 @@ export default {
 }
 
 .info_container {
-
+    background-color: var(--travel-color-blue-500);
     display: flex;
     flex-direction: column;
     align-items: center;
