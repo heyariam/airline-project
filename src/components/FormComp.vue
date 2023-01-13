@@ -117,11 +117,7 @@ export default {
     data: () =>({
         show: false,
             select: " ",
-            items: [
-                { document: 'DNI', regex: , maxLength: 8 },
-                { document: 'Pasaporte', regex: , maxLength: 9 },
-                { document: 'C.E', regex: , maxLength: 9 }
-            ],
+            items: [ 'DNI',  'Pasaporte',  'C.E' ],
             valid: true,
             id: "",
             name: "",
