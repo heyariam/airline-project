@@ -9,7 +9,7 @@
           </div>
           <div>
             <v-select :items="items" label="Hacia"></v-select>
-          </div>
+          </div> 
           <!--Fecha salida-->
           <div class="d-flex justify-center mt-2">
             <v-col cols="12">
@@ -61,11 +61,7 @@ export default {
       this.$router.push({ path: '/registro' })
     }
   },
-  computed: {
-    dateRangeText() {
-      return this.dates.join(' ~ ')
-    },
-  }
+  
 }
 
 
