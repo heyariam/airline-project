@@ -107,11 +107,13 @@
 
 <script>
 import DialogCard from "../components/Dialog.vue"
+import DateBoxCal from "../components/DatePicker.vue";
 
 export default {
     name: 'FormComp',
     components: {
-        DialogCard
+        DialogCard,
+        DateBoxCal
     },
     data: () =>({
         show: false,

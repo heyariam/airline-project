@@ -10,6 +10,9 @@
                   <div>
                     <v-select :items="items" label="Hacia"></v-select>
                   </div>
+                  <div>
+                    <DateBoxCal/>
+                  </div>
                   <!--<div>
                     <v-menu v-model="fromDateMenu" :close-on-content-click="false" :nudge-right="40" lazy
                       transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
@@ -34,8 +37,13 @@
 </template>
 
 <script>
+import DateBoxCal from "../components/DatePicker.vue";
+
 
 export default{
+  components: {
+        DateBoxCal
+    },
   data: () => ({
     items: ["Lima", "Arequipa", "Cajamarca", "Cusco", "Trujillo", "Piura", "Tacna", "Tarapoto", "Juliaca"],
     }),
