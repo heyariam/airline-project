@@ -4,32 +4,43 @@
       <v-col class="glassmorph" cols="12" lg="10" md="10" sm="6">
         <v-card-title class="card-title">Aquí comienza tu aventura</v-card-title>
         <v-form class="searchbox">
-                  <div>
-                    <v-select :items="items" label="Desde"></v-select>
-                  </div>
-                  <div>
-                    <v-select :items="items" label="Hacia"></v-select>
-                  </div>
-                  <div>
-                    <DateBoxCal/>
-                  </div>
-                  <!--<div>
-                    <v-menu v-model="fromDateMenu" :close-on-content-click="false" :nudge-right="40" lazy
-                      transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
-                      <template v-slot:activator="{ on }">
-                        <v-text-field label="Fecha salida" readonly :value="fromDateDisp" v-on="on"></v-text-field>
-                      </template>
-                      <v-date-picker locale="en-in" :min="minDate" :max="maxDate" v-model="fromDateVal" no-title
-                        @input="fromDateMenu = false"></v-date-picker>
-                    </v-menu>
-                  </div>-->
-                  <!--Fecha de partida-->
-     
-                    <div>
-                      <v-btn @click="navigateToPage" rounded>
-                        Registrar</v-btn>
-                    </div>
-          
+          <div>
+            <v-select :items="items" label="Desde"></v-select>
+          </div>
+          <div>
+            <v-select :items="items" label="Hacia"></v-select>
+          </div>
+          <!--Fecha salida-->
+          <div class="d-flex justify-center mt-2">
+            <v-col cols="12">
+              <v-menu v-model="menu2" :close-on-content-click="false" :nudge-right="40" transition="scale-transition"
+                offset-y min-width="auto">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field v-model="date" label="Fecha salida" prepend-icon="mdi-calendar" readonly v-bind="attrs"
+                    v-on="on"></v-text-field>
+                </template>
+                <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+              </v-menu>
+            </v-col>
+          </div>
+          <!--Fecha salida-->
+          <div class="d-flex justify-center mt-2">
+            <v-col cols="12">
+              <v-menu v-model="menu2" :close-on-content-click="false" :nudge-right="40" transition="scale-transition"
+                offset-y min-width="auto">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field v-model="date" label="Fecha retorno" prepend-icon="mdi-calendar" readonly v-bind="attrs"
+                    v-on="on"></v-text-field>
+                </template>
+                <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+              </v-menu>
+            </v-col>
+          </div>
+          <div>
+            <v-btn @click="navigateToPage" rounded>
+              Registrar</v-btn>
+          </div>
+
         </v-form>
       </v-col>
     </v-row>
@@ -37,24 +48,27 @@
 </template>
 
 <script>
-import DateBoxCal from "../components/DatePicker.vue";
 
 
-export default{
-  components: {
-        DateBoxCal
-    },
+export default {
+
   data: () => ({
+    dates: "",
     items: ["Lima", "Arequipa", "Cajamarca", "Cusco", "Trujillo", "Piura", "Tacna", "Tarapoto", "Juliaca"],
-    }),
+  }),
   methods: {
     navigateToPage() {
       this.$router.push({ path: '/registro' })
     }
+  },
+  computed: {
+    dateRangeText() {
+      return this.dates.join(' ~ ')
+    },
   }
 }
-  
-  
+
+
 
 </script>
 
