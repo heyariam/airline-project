@@ -150,7 +150,7 @@ export default {
             ],
     }),
     methods: {
-        getData(id) {
+        /*getData(id) {
             this.haveID = true
             var dataPass = this.passengerData.filter((data => (data.id == id)))
             //assign to input
@@ -160,6 +160,24 @@ export default {
             this.doctype = dataPass[0].doctype
             this.docnumber = dataPass[0].docnumber
 
+        },*/
+        getData(){
+            axios
+            .get('http://localhost:3000/api/datos')
+            .then(response => {
+                this.items = response.data;
+            });
+        },
+            console.warn(this.passengerData)
+            var dataPass = this.passengerData.filter((data => (data.id == id)))
+            const passengerData = axios.post("http://localhost:3000/api/datos"),{
+                id: this.passengerData.id,
+                name: this.passengerData.name,
+                lastname: this.passengerData.lastname,
+                nationality: this.passengerData.nationality,
+                doctype: this.passengerData.doctype,
+                docnumber: this.passengerData.docnumber,
+            }
         },
         saveData(haveID) {
             //update
@@ -195,6 +213,7 @@ export default {
         navigateToPage() {
             this.$router.push({ path: '/inicio' })
         },
+    
 }
 }
 
