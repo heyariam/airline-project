@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import DialogCard from "../components/Dialog.vue"
+import axios from 'axios';
 
 
 export default {
@@ -165,19 +165,14 @@ export default {
             axios
             .get('http://localhost:3000/api/datos')
             .then(response => {
-                this.items = response.data;
+                id= this.passengerData.id,
+                name= this.passengerData.name,
+                lastname= this.passengerData.lastname,
+                nationality= this.passengerData.nationality,
+                doctype= this.passengerData.doctype,
+                docnumber= this.passengerData.docnumber,
             });
-        },
-            console.warn(this.passengerData)
-            var dataPass = this.passengerData.filter((data => (data.id == id)))
-            const passengerData = axios.post("http://localhost:3000/api/datos"),{
-                id: this.passengerData.id,
-                name: this.passengerData.name,
-                lastname: this.passengerData.lastname,
-                nationality: this.passengerData.nationality,
-                doctype: this.passengerData.doctype,
-                docnumber: this.passengerData.docnumber,
-            }
+      
         },
         saveData(haveID) {
             //update
