@@ -1,6 +1,4 @@
 <template>
-  <div v-show="show">
-    <v-divider></v-divider>
     <v-card>
       <table class="w-full text-sm text-center text-gray-500">
         <thead>
@@ -33,26 +31,29 @@
         <DialogCard />
       </div>
     </v-card>
-  </div>
+
 </template>
 
 <script>
 import axios from "axios";
+import DialogCard from "./Dialog.vue";
 
 
 export default {
   name: "FormResults",
   components: {
-    
+    DialogCard,
   },
 
   data() {
-    return {
-
+    return{
+    haveID: null,
+        passengerData: [
+        ],
     }
   },
   mounted() {
-    this.getpassengerData();
+    this.getData();
   },
   methods: {
     deleteData(id) {

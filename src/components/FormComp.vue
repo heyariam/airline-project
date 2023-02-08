@@ -21,18 +21,14 @@
                 </div> <br />
                 <!--Grupo: Tipo de documento-->
                 <div>
-                    <v-select 
-                    v-model="doctype" 
-                    :items="items"
-                    item-text="document"
-                    label="Tipo de documento"
-                    return-object single-line ></v-select>
+                    <v-select v-model="doctype" :items="items" item-text="document" label="Tipo de documento"
+                        return-object single-line></v-select>
                 </div>
                 <br />
                 <!--Grupo: Numero documento-->
                 <div>
-                    <v-text-field v-model="docnumber" label="Número de documento"
-                        :rules="validateDocNumber" :counter="9"></v-text-field>
+                    <v-text-field v-model="docnumber" label="Número de documento" :rules="validateDocNumber"
+                        :counter="9"></v-text-field>
                 </div><br />
                 <!--Grupo: Button-->
                 <div>
@@ -61,14 +57,15 @@
                         </v-btn>
                     </v-card-actions>
                     <v-expand-transition>
-                       
+                        <div v-show="show">
+                            <v-divider></v-divider>
+                            <FormResults />
+                        </div>
                     </v-expand-transition>
                 </div>
             </div>
         </v-card>
-  
     </div>
-
 </template>
 
 <script>
@@ -78,41 +75,41 @@ export default {
     name: 'FormComp',
     components: {
         FormResults,
-    
-    },
-    data: () =>({
-        show: false,
-            select: " ",
-            items: [ 'DNI',  'Pasaporte',  'C.E' ],
-            valid: true,
-            id: "",
-            name: "",
-            validateName: [
-                v => !!v || 'Obligatorio',
-                v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
-            ],
-            lastname: "",
-            validateLastName: [
-                v => !!v || 'Obligatorio',
-                v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
-            ],
-            nationality: "",
-            validateNationality: [
-                v => !!v || 'Obligatorio',
-                v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
-            ],
-            doctype: "",
-            docnumber: "",
-            validateDocNumber: [
-                v => !!v || 'Obligatorio',
-                v => (v == 'DNI' &&  /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
-                v => (v == 'Pasaporte' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
-                v => (v == 'C.E' && /^([a-zA-Z]+)$/.test(v)) || 'Solo números y letras permitidas',
-            ],
-            haveID: null,
-            passengerData: [
 
-            ],
+    },
+    data: () => ({
+        show: false,
+        select: " ",
+        items: ['DNI', 'Pasaporte', 'C.E'],
+        valid: true,
+        id: "",
+        name: "",
+        validateName: [
+            v => !!v || 'Obligatorio',
+            v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
+        ],
+        lastname: "",
+        validateLastName: [
+            v => !!v || 'Obligatorio',
+            v => /^([ a-zA-Z\sÁÉÍÓÚáéíóúÑñ]+)$/.test(v) || 'Ingresa un dato válido (solo letras y espacios permitidos)',
+        ],
+        nationality: "",
+        validateNationality: [
+            v => !!v || 'Obligatorio',
+            v => /^([a-zA-Z]+)$/.test(v) || 'Ingresa un dato válido (solo letras permitidas)',
+        ],
+        doctype: "",
+        docnumber: "",
+        validateDocNumber: [
+            v => !!v || 'Obligatorio',
+            v => (v == 'DNI' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
+            v => (v == 'Pasaporte' && /^([0-9]+)$/.test(v)) || 'Solo numeros permitidos',
+            v => (v == 'C.E' && /^([a-zA-Z]+)$/.test(v)) || 'Solo números y letras permitidas',
+        ],
+        haveID: null,
+        passengerData: [
+
+        ],
     }),
     methods: {
         /*getData(id) {
@@ -149,15 +146,15 @@ export default {
             }
 
         },
-        
+
         reset() {
             this.$refs.form.reset()
         },
         navigateToPage() {
             this.$router.push({ path: '/inicio' })
         },
-    
-}
+
+    }
 }
 
 
