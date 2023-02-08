@@ -72,10 +72,12 @@
 </template>
 
 <script>
+import FormResults from './FormResults.vue';
 
 export default {
     name: 'FormComp',
     components: {
+        FormResults,
     
     },
     data: () =>({
