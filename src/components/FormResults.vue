@@ -39,7 +39,13 @@
 <script>
 import axios from "axios";
 
+
 export default {
+  name: "FormResults",
+  components: {
+    
+  },
+
   data() {
     return {
 
@@ -53,7 +59,7 @@ export default {
       var index = this.passengerData.findIndex((data) => data.id == id)
       this.passengerData.splice(index, 1)
     },
-    getpassengerData(){
+    getData(id){
       axios.get("http://localhost:3000/api/datos");
     }
   },
