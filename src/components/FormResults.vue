@@ -37,12 +37,23 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-import axios from "axios"
+import axios from "axios";
 
-export default defineComponent({
-  setup() {
-    
+export default {
+  data(){
+    return {
+
+    }
   },
-})
+  mounted(){
+    this.getpassengerData();
+  },
+  methods:{
+    deleteData(id) {
+            var index = this.passengerData.findIndex((data) => data.id == id)
+            this.passengerData.splice(index, 1)
+        },
+  },
+
+}
 </script>

@@ -77,7 +77,6 @@ export default {
     name: 'FormComp',
     components: {
     
-
     },
     data: () =>({
         show: false,
@@ -148,10 +147,7 @@ export default {
             }
 
         },
-        deleteData(id) {
-            var index = this.passengerData.findIndex((data) => data.id == id)
-            this.passengerData.splice(index, 1)
-        },
+        
         reset() {
             this.$refs.form.reset()
         },
